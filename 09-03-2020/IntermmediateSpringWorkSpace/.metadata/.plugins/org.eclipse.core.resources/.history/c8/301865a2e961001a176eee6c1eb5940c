@@ -1,0 +1,28 @@
+package com.psl.pl;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.psl.bean.Employee;
+import com.psl.dao.EmployeeDao;
+
+public class Client {
+
+	@SuppressWarnings("resource")
+	public static void main(String[] args) {
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		
+		EmployeeDao dao = (EmployeeDao) context.getBean("dao");
+		
+		List<Employee> empList = dao.fetchEmployee();
+		
+		for(Employee emp: empList)
+		{
+			System.out.println(emp);
+		}		
+		
+	}
+}

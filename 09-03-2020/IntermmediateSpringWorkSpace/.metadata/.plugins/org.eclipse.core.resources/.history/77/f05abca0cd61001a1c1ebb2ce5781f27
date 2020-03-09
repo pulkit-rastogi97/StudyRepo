@@ -1,0 +1,23 @@
+package com.psl.aop;
+
+public class BankImpl implements IBank {
+
+	@Override
+	public void transfer(int creditActNo, int debitactNo, double amt) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public double getBalance(int accNo) throws ArithmeticException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean validateCard(int cardNo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
