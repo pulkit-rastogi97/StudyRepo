@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringinitDestroy"/>
+<aop-project name="ProductsManagementSystem"/>
+<aop-project name="AutowiringDemo"/>
+<aop-project name="SpringDemoJDBC"/>
+</aop-reference-model>

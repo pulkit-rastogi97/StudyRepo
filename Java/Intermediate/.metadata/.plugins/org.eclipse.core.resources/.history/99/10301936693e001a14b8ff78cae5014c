@@ -1,0 +1,12 @@
+import org.junit.*;
+public class TestCalculator {
+
+	Calculator ref;
+	
+	@Before
+	public void init()
+	{
+		System.out.println("call to @Bfore ");
+		ref = new Calculator();
+	}
+}

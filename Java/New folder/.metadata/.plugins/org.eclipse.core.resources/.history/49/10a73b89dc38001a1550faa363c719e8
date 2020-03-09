@@ -1,0 +1,21 @@
+package snippet;
+
+class SuperClass {
+private int num1;
+public int num2;
+}
+ 
+class SubClass extends SuperClass{
+void printValues() {
+super.num1 = super.num2 + 1;
+System.out.println(super.num1 + " " + super.num2);
+}
+}
+public class InhetitanceTest {
+public static void main(String[] args) {
+SubClass subClass = new SubClass();
+subClass.num1=10;
+subClass.num2=20;
+subClass.printValues(); 
+}
+}

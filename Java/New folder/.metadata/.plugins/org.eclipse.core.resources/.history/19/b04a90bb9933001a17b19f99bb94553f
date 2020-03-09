@@ -1,0 +1,28 @@
+package com.persistent.pI;
+
+import com.persistent.app.Advisor;
+import com.persistent.app.Greeter;
+
+public class GreeterTest {
+
+	public static void main(String[] args) {
+		if(args.length==0)
+			System.out.println("Pass Command Line Arguments ");
+		else
+		{
+			Greeter[] greet = new Greeter[args.length];
+			for(int i = 0; i<args.length; i++)
+			{
+				greet[i]=new Greeter(args[i]);
+				greet[i].sayHello();
+			}
+			Advisor ad = new Advisor();
+			ad.getAdvice();
+			for(int i = 0; i<args.length; i++)
+			{
+				greet[i].sayGoodBye();
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package Question5;
+
+public class MainClass {
+	public static void main(String[] args) {
+		
+		Thread1 one = new Thread1(args[0]);
+		Thread t1 = new Thread(one);
+		t1.start();
+	}
+
+}

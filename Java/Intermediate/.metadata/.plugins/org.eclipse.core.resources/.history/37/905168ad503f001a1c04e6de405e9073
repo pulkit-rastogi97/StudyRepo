@@ -1,0 +1,6 @@
+package oops.fourB;
+
+public class ClassDemo {
+
+	protected int b;
+}

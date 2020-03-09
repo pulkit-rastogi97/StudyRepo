@@ -1,0 +1,9 @@
+
+public class Pulkit {
+
+	public static void main(String[] args) 
+	{
+		int s = 0x0059;
+		System.out.println(s);
+	}
+}

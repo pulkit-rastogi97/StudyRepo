@@ -1,0 +1,12 @@
+package com.psl.Question1.dto;
+
+import java.time.LocalDate;
+
+public class DateOperations {
+
+	
+	public LocalDate getDate(String days,String month,String year)
+	{
+		
+	}
+}

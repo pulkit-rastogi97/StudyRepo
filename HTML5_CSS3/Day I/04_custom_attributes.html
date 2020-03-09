@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article id="electricCars" class="cars" data-index="i123" data-color="red"></article>
+    <script>
+        var ecars =document.getElementById('electricCars')
+        document.write("<br>class: "+ecars.getAttribute('class'));
+        document.write("<br>data-index: "+ecars.getAttribute('data-index'));
+        document.write("<br>color: "+ecars.dataset.color);
+
+        ecars.dataset.color = 'blue';
+        document.write("<br>color: "+ecars.dataset.color);
+
+        ecars.getAttribute('data-index','i20');
+        document.write("<br>data-index: "+ecars.getAttribute('data-index'));
+
+
+    </script>
+</body>
+</html>
+

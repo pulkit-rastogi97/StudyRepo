@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <body> 
+
+        <div style="text-align:center"> 
+         
+          <video id="myVideo" width="420" controls>
+            <source src="https://r3---sn-npoe7nes.googlevideo.com/videoplayback?expire=1582723427&ei=Ax1WXojcFMPHkgbw7a-YDw&ip=45.32.225.109&id=o-AF6EUrq5fOG5UxSjfzTxL_LF-NKuO-ikovqFDu1IQEI5&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&gir=yes&clen=3077518&ratebypass=yes&dur=80.062&lmt=1408843188739222&fvip=3&fexp=23842630,23878761&c=WEB&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,mime,gir,clen,ratebypass,dur,lmt&sig=ALgxI2wwRgIhAKh-R3GyODv_wDXXGIonep1WLPrXzfgZlYxHc1vR1tipAiEAl2jWblelSOWU-DeP41BcJPep90oa-gBUzKdGdS3dIzo%3D&title=Big+Buck+Bunny+test&redirect_counter=1&cm2rm=sn-cvhss7s&req_id=cfd6fa287986a3ee&cms_redirect=yes&mip=103.6.33.21&mm=34&mn=sn-npoe7nes&ms=ltu&mt=1582701806&mv=m&mvi=2&pl=24&lsparams=mip,mm,mn,ms,mv,mvi,pl&lsig=AHylml4wRQIgFovwY99j88qDETbOQUjpRcNXyVtRBvu_5toK6A2yJ9cCIQDtsuGQOsxbUtG0E6_VjsZvVu6M38Y9eH8X2QkIldkeFQ%3D%3D" type="video/mp4">
+
+            Your browser does not support HTML5 video.
+          </video>
+          <br><br>
+        </div>
+        <div style="text-align: center;"> 
+          <button onclick="playPause()">Play/Pause</button> <br>
+          <button onclick="makeBig()">Big</button><br>
+          <button onclick="makeSmall()">Small</button><br>
+          <button onclick="makeNormal()">Normal</button><br>
+          <button onclick="enableAutoPlay()">Auto Play</button><br>
+          <button onclick="Loop()">Enable Loop</button><br>
+          <button onclick="increaseRate()">Increase Play Rate</button><br>
+          <button onclick="decreaseRate()">Decrease Play Rate</button><br>
+          <button onclick="seektime()">Seek 5 seconds ahead</button><br>
+          <button onclick="decreaseSeek()">Seek 5 seconds behind</button><br>
+          <button onclick="getVolume()" type="button">What is the volume?</button><br>
+        <button onclick="IncreaseVolume()" type="button">IncreaseVolume</button><br>
+        <button onclick="DecreaseVolume()" type="button">DecreaseVolume</button> <br>
+        <button onclick="volumeMute()" type="button">Mute</button>  <br>
+        <button onclick="volumeUnmute()" type="button">Unmute</button><br> 
+        
+        
+        </div> 
+        
+        <script> 
+
+        var myVideo = document.getElementById("myVideo"); 
+
+        
+        function getVolume() 
+        { 
+            alert(myVideo.volume);
+        } 
+
+        function volumeMute(){
+            myVideo.muted = true;
+        }
+
+        function volumeUnmute(){
+            myVideo.muted=false;
+        }
+  
+        function IncreaseVolume() { 
+            if(myVideo.muted==true)
+            {
+                myVideo.muted=false;
+            }
+            if(myVideo.volume<1)
+            {
+                myVideo.muted=false;
+                myVideo.volume = myVideo.volume+0.2;
+            }
+            
+        } 
+        
+        function DecreaseVolume() {
+        
+            if(myVideo.volume>0)
+            myVideo.volume = myVideo.volume-0.2;    
+        }
+        function decreseSeek()
+        {
+            myVideo.currentTime-=5;
+        }
+        function seektime()
+        {
+            myVideo.currentTime+=5;
+        }
+        function Loop()
+        {
+            myVideo.loop=true;
+        }
+
+        function increaseRate()
+        {
+            myVideo.playbackRate+=0.5;
+
+        }
+        function decreaseRate()
+        {
+            if(myVideo.playbackRate>=0.7)
+                myVideo.playbackRate-=0.2;
+        }
+        function enableAutoPlay()
+        {
+            myVideo.autoplay=true;
+            myVideo.load();
+            
+        }
+        function playPause() { 
+          if (myVideo.paused) 
+            myVideo.play(); 
+          else 
+            myVideo.pause(); 
+        } 
+        
+        function makeBig() { 
+            myVideo.width = 560; 
+        } 
+        
+        function makeSmall() { 
+            myVideo.width = 320; 
+        } 
+        
+        function makeNormal() { 
+            myVideo.width = 420; 
+        } 
+        </script> 
+        
+        <p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+        
+        </body> 
+
+
+
+</body>
+</html>

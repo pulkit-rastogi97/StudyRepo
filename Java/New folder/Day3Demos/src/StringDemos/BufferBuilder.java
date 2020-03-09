@@ -1,0 +1,20 @@
+package StringDemos;
+
+public class BufferBuilder {
+
+	public static void main(String[] args) {
+		StringBuffer buffer = new StringBuffer("Pune");
+		
+		System.out.println("buffer before concat = "+buffer);
+		buffer.append("Nagur");
+		System.out.println("after concat = "+buffer);
+		
+		StringBuilder builder = new StringBuilder("Persistent");
+		System.out.println("builder = "+builder);
+		builder.append("Goa");
+		System.out.println("after append = "+builder);
+		
+		String s = "Pune";
+		//s.spl
+	}
+}

@@ -1,0 +1,17 @@
+div {
+  height: 50px;
+  display: inline-block;
+  border: gray solid 3px;
+}
+#left {
+  width: 100px;
+  color: white;
+  background-color: #6464ff;
+  border: gray solid 3px;
+}
+#right {
+  width: 200px;
+  color: white;
+  background-color: blue;
+  border: gray solid 3px;
+}

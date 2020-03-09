@@ -1,0 +1,17 @@
+package com.psl.Question2.dto;
+
+public class Person {
+
+	int age;
+	String name;
+	
+	public boolean isEligible(Person p)
+	{
+		boolean flag=false;
+		if(p.age>=18 && p.age<=100)
+		{
+			flag = true;
+		}	
+		return flag;
+	}
+}

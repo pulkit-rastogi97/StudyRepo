@@ -1,0 +1,28 @@
+
+public class Account {
+
+	double balance;
+	public Account(int balance)
+	{
+		this.balance=balance;
+	}
+
+	public double getBalance()
+	{
+		return this.balance;
+	}
+	public void withdraw(int amt)
+	{
+		if(amt< balance)
+		{
+			balance = balance - amt;
+		}
+		
+	}
+	public void deposit(int amt)
+	{
+		balance = balance + amt;
+	}
+	
+
+}

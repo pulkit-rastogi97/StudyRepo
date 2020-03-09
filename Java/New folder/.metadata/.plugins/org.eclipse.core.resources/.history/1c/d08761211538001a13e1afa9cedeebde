@@ -1,0 +1,27 @@
+
+public class Products {
+
+	private String proId;
+	private String prodName;
+	public Products(String proId, String prodName) {
+		super();
+		this.proId = proId;
+		this.prodName = prodName;
+	}
+	public String getProId() {
+		return proId;
+	}
+	public void setProId(String proId) {
+		this.proId = proId;
+	}
+	public String getProdName() {
+		return prodName;
+	}
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+	@Override
+	public String toString() {
+		return "Products [proId=" + proId + ", prodName=" + prodName + "]";
+	}
+}

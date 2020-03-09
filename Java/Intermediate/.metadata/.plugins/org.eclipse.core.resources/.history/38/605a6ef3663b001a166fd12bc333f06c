@@ -1,0 +1,76 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+public class DayAssignment {
+
+	public DayAssignment() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// JDBC driver name and database URL
+		   final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+		   final String DB_URL = "jdbc:mysql://localhost:3306/test";
+
+		   //  Database credentials
+		   final String USER = "root";
+		   final String PASS = "root";
+		   
+		   try{
+			   Class.forName(JDBC_DRIVER);
+			   Connection con = DriverManager.getConnection(DB_URL,USER,PASS);
+			   String sql;
+			   PreparedStatement pstmt;
+			   int row;
+			   //Query 1
+//			   sql = "INSERT INTO Employee(empName,empSal) VALUES (\"xyz\",30000)";
+//			   pstmt = con.prepareStatement(sql);
+//			   row = pstmt.executeUpdate();
+//			   if(row>0)
+//			   {
+//				   System.out.println("Inserted");
+//			   }
+//			   
+			   
+			   //Query 2
+//			   sql = "UPDATE Employee SET empName = ?, empSal = ? WHERE empId = ? ";
+//			   pstmt=con.prepareStatement(sql);
+//			   pstmt.setString(1, "Pulkit");
+//			   pstmt.setInt(2, 40000);
+//			   pstmt.setInt(3, 2);
+//			   row = pstmt.executeUpdate();
+//			   if(row>0)
+//			   {
+//				   System.out.println("Updated");
+//			   }
+//			   
+			   
+			   //Query 3
+			   int startRange=20000,endRange=40000;
+			   sql = "SELECT * FROM Employee WHERE empSal BETWEEN "+startRange+" AND "+endRange;
+			   Statement stmt = con.createStatement();
+			   ResultSet rs = stmt.executeQuery(sql);
+			   while(rs.next())
+			   {
+				   System.out.println(rs.getInt(1)+" "+rs.getString(2)+" ");
+			   }
+		/*	   stmt.setInt(1, 20000);
+			   pstmt.setInt(2, 30000);
+			   row = pstmt.execute();*/
+//			   if(row>0)
+//			   {
+//				   System.out.println("display");
+//			   }
+//			   
+			   
+			   
+		   }catch(Exception e)
+		   {
+			   System.out.println(e.getMessage());
+		   }
+	}
+}

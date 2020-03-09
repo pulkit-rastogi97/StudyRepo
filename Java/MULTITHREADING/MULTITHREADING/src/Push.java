@@ -1,0 +1,28 @@
+
+public class Push implements Runnable{
+	Stack<Integer> s;
+	public Push(Stack<Integer> s){
+		this.s=s;
+		new Thread(this).start();
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i=0;i<3;i++){
+		synchronized(s){
+			s.list.add(i);
+			s.notify();
+			try {
+				s.wait(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		}
+	}
+
+	
+	
+}

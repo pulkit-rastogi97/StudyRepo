@@ -1,0 +1,19 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+public class Writer1 {
+	
+	public static void main(String[] args) throws IOException {
+		
+		//Boolean isExists ;
+		File file = new File("aahana.txt");
+		System.out.println(file.exists());
+		FileWriter fw = new FileWriter(file);
+		System.out.println(fw);
+		
+		
+	}
+
+}

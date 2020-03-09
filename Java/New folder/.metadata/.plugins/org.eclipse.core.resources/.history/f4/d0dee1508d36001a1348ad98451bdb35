@@ -1,0 +1,47 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class QuesOne {
+	public static void main(String[] args) throws IOException {
+		Scanner scan = new Scanner(System.in);
+		boolean flag;
+		String ans;
+		if (args.length < 2)
+			System.out.println("Enter both source and destination file names ");
+		else {
+			File toRead = new File(args[0]);
+			File toWrite = new File(args[1]);
+			if (!toRead.exists()) {
+				System.out.println("Source File doesn't exist");
+			} else {
+				FileReader reader = new FileReader(toRead);
+				BufferedReader breader = new BufferedReader(reader);
+				if (!toWrite.exists()) {
+					flag = toWrite.createNewFile();
+					if (flag) {
+						Task:
+						FileWriter writer = new FileWriter(toWrite);
+						BufferedWriter bwriter = new BufferedWriter(writer);
+					}
+				} else {
+					System.out.println("Whether you want to overwrite or not ? (Yes/No) :: ");
+					ans = scan.next();
+					FileWriter writer = new FileWriter(toWrite);
+					BufferedWriter bwriter = new BufferedWriter(writer);
+					if(ans.equalsIgnoreCase("yes"))
+					{
+						break Task;
+					}
+				}
+			}
+
+		}
+		scan.close();
+	}
+
+}

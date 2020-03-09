@@ -1,0 +1,13 @@
+package com.psl.service;
+
+import java.util.ArrayList;
+
+import com.psl.bean.Employee;
+
+public interface EmployeeServiceI {
+	public ArrayList<Employee> getAllEmployees();
+	public Employee getEmployeeById(int empId);
+	public Employee updateEmployee(int empId,int empSal);
+	public Employee deleteEmployee(int empId);
+	public int insertEmployee(Employee emp);
+}

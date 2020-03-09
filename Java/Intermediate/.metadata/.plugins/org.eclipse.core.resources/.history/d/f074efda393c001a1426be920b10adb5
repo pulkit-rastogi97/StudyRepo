@@ -1,0 +1,25 @@
+package Question5;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Thread1 implements Runnable {
+
+	String name;
+	public Thread1(String name)
+	{
+		this.name = name;
+	}
+	@Override
+	public void run() {
+		try (Scanner scanner = new Scanner( new File("poem.txt"), "UTF-8" )) {
+		    String text = scanner.useDelimiter("\\A").next();
+		    System.out.println(text);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+}

@@ -1,0 +1,17 @@
+
+public class ThreadAccount implements Runnable{
+
+	public void run()
+	{
+		Account obj = new Account(10000);
+		System.out.println("current thread  = "+Thread.currentThread().getName());
+		for(int i  = 0; i<5; i++)
+		{
+			System.out.println("Thread in for = "+Thread.currentThread().getName());
+			obj.withdraw(1000);
+			obj.deposit(2000);
+			System.out.println("current balance = "+obj.getBalance());
+		}
+	}
+
+}

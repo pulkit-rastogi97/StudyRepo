@@ -1,0 +1,31 @@
+package com.psl.pl;
+
+import java.util.Scanner;
+
+import com.psl.bean.Employee;
+import com.psl.service.EmployeeService;
+import com.psl.service.EmployeeServiceI;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		EmployeeServiceI service = new EmployeeService();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter name :: ");
+		String name = sc.next();
+		System.out.println("Enter salary :: ");
+		int salary = sc.nextInt();
+		Employee emp = new Employee();
+		emp.setEmpName(name);
+		emp.setEmpSal(salary);
+		int id = service.insertEmployee(emp);
+		System.out.println("Inserted Successfully and id  = "+id);		
+	/*	ArrayList<Employee> list = 
+				service.getAllEmployees();
+		for(Employee emp : list)
+			System.out.println(emp); */
+	}
+
+}

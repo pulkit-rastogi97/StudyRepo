@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.google.co.in" id="a1">Google!</a>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    
+        $('a1').onclick = foo;
+
+        function foo(evt) {
+            evt.preventDefault(); //prevent the default behavior
+            alert('You are visiting outside link Google!');
+        }
+    
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #div1,
+    #div2
+     {
+            width: 400px;
+            height: 100px;
+            background-color: turquoise;
+            color: indigo;
+            text-align: center;
+            padding: 5px;
+            margin: 10px;
+            border: solid 4px maroon;
+            font-size: x-large;
+        }
+        #div3 {
+            width: 400px;
+            height: 100px;
+            background-color: orange;
+            color: navy;
+            text-align: center;
+            padding: 5px;
+            margin: 10px;
+            border: solid 4px maroon;
+            font-size: x-large;
+        }
+        #div4,
+        #div5 {
+            width: 400px;
+            height: 100px;
+            background-color: indigo;
+            color: turquoise;
+            text-align: center;
+            padding: 5px;
+            margin: 10px;
+            border: solid 4px maroon;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <p id="para1">This is bubbling!</p>
+    </div>
+    <div id="div2">
+        <p id="para2">This is bubbling - withStopPropagation !</p>
+    </div>
+    <div id="div3">
+        <p id="para3">This is capturing - withStopPropagation !</p>
+    </div>
+    <div id="div4">
+        <p id="para4">Bubbing - with multiple listeners !</p>
+    </div>
+    <div id="div5">
+        <p id="para5">bubbling- with multiple listeners & stopImmediate !</p>
+    </div>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    
+
+        $('div1').addEventListener('click', function() {
+            alert('you clicked div1!');
+        }, false);
+        $('para1').addEventListener('click', function() {
+            alert('you clicked para1!');
+        }, false);
+
+        $('div2').addEventListener('click', function() {
+            alert('you clicked div2!');
+        }, false);
+        $('para2').addEventListener('click', function(evt) {
+            evt.stopPropagation();
+            alert('you clicked para2!');
+        }, false);
+
+        $('div3').addEventListener('click', function(evt) {
+            evt.stopPropagation();
+            alert('you clicked div3!');
+        }, true);
+        $('para3').addEventListener('click', function() {
+            alert('you clicked para3!');
+        }, true);
+
+        $('div4').addEventListener('click', function() {
+            alert('you clicked div4!');
+        }, false);
+        $('para4').addEventListener('click', function() {
+            alert('you clicked para4 thru L1 !');
+        }, false);
+        $('para4').addEventListener('click', function() {
+            alert('you clicked para4 thru L2 !');
+        }, false);
+        $('para4').addEventListener('click', function() {
+            alert('you clicked para4 thru L3 !');
+        }, false);
+
+        $('div5').addEventListener('click', function() {
+            alert('you clicked div5!');
+        }, false);
+        $('para5').addEventListener('click', function(evt) {
+            evt.stopImmediatePropagation();
+            alert('you clicked para5 thru L1 !');
+        }, false);
+        $('para5').addEventListener('click', function() {
+            alert('you clicked para5 thru L2 !');
+        }, false);
+        $('para5').addEventListener('click', function() {
+            alert('you clicked para5 thru L3 !');
+        }, false);
+
+
+    </script>
+</body>
+</html>

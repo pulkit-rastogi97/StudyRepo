@@ -1,0 +1,76 @@
+package stringQues;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class QuesFour {
+
+	public static void main(String[] args) {
+
+		// Using logic
+		String str = null;
+		System.out.println("Enter a string : ");
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+				System.in))) {
+			str = reader.readLine();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+		if (str.length() == 0)
+			System.out.println("String is empty ");
+		else {
+			int[] ch = new int[256];
+			for (int i = 0; i < str.length(); i++) {
+				ch[(int) str.charAt(i)]++;
+			}
+			System.out
+					.println("The dulicate characters present in the string are : ");
+			for (int i = 0; i < ch.length; i++)
+				if (ch[i] > 1)
+					System.out.print((char) i + " ");
+			/*
+			 * // Using Set property to keep only unique entities //
+			 * Set<Character> duplicate = new HashSet<Character>();
+			 * System.out.println("Enter a String :: "); String str = null;
+			 * 
+			 * try(BufferedReader reader = new BufferedReader(new
+			 * InputStreamReader(System.in))) { str = reader.readLine();
+			 * }catch(IOException e) { System.out.println(e.getMessage()); }
+			 * 
+			 * System.out.println(
+			 * "Duplicate characters in the string are as follows :: ");
+			 * System.out.print("[ "); for(int i = 0; i<str.length(); i++) {
+			 * if(!duplicate.add(str.charAt(i))) { if(i<str.length()-1)
+			 * System.out.print(str.charAt(i)+" , "); else
+			 * System.out.print(str.charAt(i)+" "); } } System.out.print("]");
+			 */
+			long l = 10;
+			float f = 10_00.000f;
+			Long l1 = new Long(10L);
+			Long l2 = 1000000L;
+			Float f1 = new Float(l2);
+			
+			char d = (char) -1;
+			System.out.println(d);
+	
+			
+			System.out.println("**************");
+			
+			int c =(int)f;
+			String a = "012_101";
+			System.out.println(a);
+			byte  b = 0b111;
+			System.out.println(b);
+			int i = ~9;
+			System.out.println(i);
+			
+			float f11 = Long.MAX_VALUE;
+			System.out.println(f11);
+			//String s1 = (String)'\ufeed';
+			char ch1 = 'n';
+			//System.out.println(octal);
+		}
+
+	}
+}

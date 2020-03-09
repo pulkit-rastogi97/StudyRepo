@@ -1,0 +1,86 @@
+package question1;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Stack  implements Runnable{
+
+	boolean isPrinted = true;
+	int arr[] = new int[50];
+	int top;
+	public Stack()
+	{
+		top = -1;
+	}
+	
+	public void push(int i)
+	{
+		if(top==50)
+		{
+			System.out.println("Stack OverFlow");
+			return;
+		}
+		top++;
+		arr[top]=i;
+	}
+	
+	public int pop()
+	{
+		if(top==-1)
+		{
+			System.out.println("Stack Underflow");
+			//return Integer.TYPE;
+		}
+		return -1;
+	}
+	void setPrinted(boolean isPrinted)
+	{
+		this.isPrinted=isPrinted;
+	}
+	boolean isPrinted()
+	{
+		return isPrinted;
+	}
+	@Override
+	public void run() {
+		System.out.println("Thread Running = "+Thread.currentThread().getName());
+		if(Thread.currentThread().getName().equals("Push"))
+		{
+			for(int i= 0; i<10; i++)
+			{
+				while(!this.isPrinted()) {              //loop to take care of spontaneous wake-ups
+                    try {
+                       this.wait();
+                    } catch(InterruptedException e) { System.out.println(e.getMessage()); }
+                 }
+				Random rand = new Random();
+				int number =(rand.nextInt((3000-1000)+1)+1000);
+				this.push(number);
+				System.out.println("Number Pushed");
+				this.setPrinted(false);
+                this.notify();
+				
+			 }
+                    
+		}else{
+			for(int i = 0 ; i<10; i++) {
+			while(this.isPrinted()) {              //loop to take care of spontaneous wake-ups
+                try {
+                      this.wait();
+                } catch(Exception e) {  }
+          }
+          //System.out.println("Factorial of "+this.number+" is "+calculateFactorial(this.number));
+		  System.out.println("Pop Operation result : "+this.pop());
+          this.setPrinted(true);
+          this.notify();
+			}
+		}
+		}
+	
+		
+	}
+
+
+

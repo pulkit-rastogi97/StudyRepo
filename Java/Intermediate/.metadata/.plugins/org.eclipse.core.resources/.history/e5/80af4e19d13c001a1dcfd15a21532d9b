@@ -1,0 +1,23 @@
+package com.psl.dao;
+
+import java.sql.Connection;
+
+import com.psl.dto.Employee;
+import com.psl.util.DBUtil;
+
+public class EmployeeDao implements EmployeeDaoI{
+
+	Connection con;
+	public EmployeeDao()
+	{
+		con=DBUtil.getConnect();
+	}
+	@Override
+	public Employee getEmployeeById(int id) {
+		
+		Employee emp = null;
+		String sql = 
+		return null;
+	}
+
+}

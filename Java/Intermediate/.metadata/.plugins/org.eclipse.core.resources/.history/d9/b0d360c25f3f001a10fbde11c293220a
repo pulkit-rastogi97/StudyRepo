@@ -1,0 +1,11 @@
+
+public class Question1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<Integer> stack = new Stack<Integer>();
+		Push push = new Push(stack);
+		Pop pop = new Pop(stack);
+	}
+
+}

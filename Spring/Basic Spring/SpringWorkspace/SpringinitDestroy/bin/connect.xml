@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="person" class="com.psl.pojo.Person">
+<property name="name" value="raj"></property>
+<property name="map">
+<!-- <list>
+<ref bean="address1"/>
+<ref bean="address2"/>
+<ref bean="address3"/>
+<ref bean="address4"/>
+</list> -->
+<map>
+<entry key="addr1" value-ref="address1"></entry>
+<entry key="addr2" value-ref="address2"></entry>
+<entry key="addr3" value-ref="address3"></entry>
+<entry key="addr4" value-ref="address4"></entry>
+</map>
+</property>
+</bean>
+<bean id="address1" class="com.psl.pojo.Address">
+<property name="city" value="pune"></property>
+<property name="pincode" value="411040"></property>
+</bean>
+<bean id="address2" class="com.psl.pojo.Address">
+<property name="city" value="gurgaon"></property>
+<property name="pincode" value="122001"></property>
+</bean>
+<bean id="address3" class="com.psl.pojo.Address">
+<property name="city" value="mumbai"></property>
+<property name="pincode" value="410040"></property>
+</bean>
+<bean id="address4" class="com.psl.pojo.Address">
+<property name="city" value="delhi"></property>
+<property name="pincode" value="110006"></property>
+</bean>
+</beans>

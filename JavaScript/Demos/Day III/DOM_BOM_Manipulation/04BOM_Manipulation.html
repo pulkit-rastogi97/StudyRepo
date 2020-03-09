@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnInner">Inner_Height_Width</button>
+    <button id="btnOuter">Outer_Height_Width</button>
+    <p id="paraInner"></p>
+    <p id="paraOuter"></p>
+
+    <script>
+       function $(id){
+            return document.getElementById(id);
+        } 
+    
+        $('btnInner').onclick = function() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            $('paraInner').innerHTML = 'Width: '+w+'<br> Height: '+h;
+        }
+        $('btnOuter').onclick = function() {
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+            $('paraOuter').innerHTML = 'Width: '+w+'<br> Height: '+h;
+        }
+    
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bruce Lee</h1>
+    <br>
+    <a href="Javascript:newWindow()">Bruce Lee</a>
+    <a href="Javascript:closeWindow()">Close</a>
+
+    <script>
+        var winObj = null;
+        function newWindow() {
+            // winObj = open('bruce.jpg','Bruce Lee'); // new tab
+            winObj = open('bruce.jpg','Bruce Lee','location=no'); // new window
+        }
+    
+        function closeWindow() {
+            winObj.close();
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para1"></p>
+
+    <a href="https://www.google.co.in">Google</a>
+    <button id="btnFwd">Go Forward!</button>
+
+    <script>
+        // for(var i=0;i<navigator.plugins.length; i++) {
+        //     document.write('<br>'+navigator.plugins[i].name);
+        // }
+
+        function $(id){
+            return document.getElementById(id);
+        }
+    
+        // // location
+        // $('para1').innerHTML = '<br> Page Location is '+window.location.href;
+        // $('para1').innerHTML += '<br> Page HostName is '+window.location.hostname;
+        // $('para1').innerHTML += '<br> Page Path is '+window.location.pathname;
+        // $('para1').innerHTML += '<br> Page Protocol is '+window.location.protocol;
+
+        $('btnFwd').onclick = function() {
+            window.history.forward();
+        }
+    </script>
+
+</body>
+</html>

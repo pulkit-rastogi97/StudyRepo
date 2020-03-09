@@ -1,0 +1,20 @@
+package com.psl.game.test;
+
+import org.junit.Before;
+
+import com.psl.game.dao.GameDao;
+import com.psl.game.dao.GameDaoImpl;
+import com.psl.game.service.GameServiceImpl;
+
+public class TestGameDaoImpl {
+
+	GameServiceImpl service;
+	GameDao dao;
+	@Before
+	public void init()
+	{
+		dao = new GameDaoImpl();
+		service = new GameServiceImpl();
+		service.setDao(dao);
+	}
+}

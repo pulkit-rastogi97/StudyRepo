@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .wrapper
+        {
+            border: 2px solid black;
+            padding: 1em;
+            margin-bottom : 10px;
+        }
+
+        @media only screen and (max-width: 550px)
+        {
+            #div1
+            {
+                background-color: blue;
+            }
+        }
+        @media only screen and (min-width: 990px)
+        {
+            #div2
+            {
+                background-color: blue;
+            }
+        }
+        @media only screen and (max-width: 990px) and (min-width: 550px)
+        {
+            #div3
+            {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="div1" class="wrapper"><br><br><br><br>This div turns blue when screen width is less than 550 px</div>
+    <br><br><br><br>
+    <div id="div2" class="wrapper"><br><br><br><br>This div turns blue when screen width is greater than 990 px</div>
+    <br><br><br><br>
+    <div id="div3" class="wrapper"><br><br><br><br>This div turns blue when screen width is between 550px and 990px</div>
+
+</body>
+</html>

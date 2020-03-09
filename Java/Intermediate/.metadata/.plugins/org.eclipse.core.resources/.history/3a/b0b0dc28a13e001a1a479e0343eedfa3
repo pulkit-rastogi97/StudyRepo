@@ -1,0 +1,36 @@
+package com.psl.Question1.dto;
+
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.InputMismatchException;
+
+import com.psl.Question1.exception.DateOperationsException;
+
+public class DateOperations {
+
+	
+	public LocalDate getDate(int dayOfMonth,int month,int year) throws DateOperationsException
+	{
+		LocalDate date=null;
+		try{
+		 date = LocalDate.of(year, month, dayOfMonth);
+		}catch(DateTimeException | InputMismatchException e)
+		{
+			throw new DateOperationsException(e.getMessage());
+		}
+		return date;
+	}
+	
+	public Period getDifference(int dayOfMonth1,int month1,int year1,int dayOfMonth2,int month2,int year2) throws DateOperationsException
+	{
+		LocalDate date1 = getDate(dayOfMonth1,month1,year1);
+		LocalDate date2 = getDate(dayOfMonth2,month2,year2);
+		Period period= Period.between(date1, date2);
+
+		if(period.isNegative())
+			throw new DateOperationsException("The date "+date1+" is after "+date2+" . So, Period is not valid");
+		return period;
+		
+	}
+}

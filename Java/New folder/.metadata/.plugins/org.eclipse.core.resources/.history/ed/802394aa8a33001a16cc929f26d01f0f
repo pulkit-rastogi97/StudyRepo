@@ -1,0 +1,18 @@
+package WrapperClasses;
+
+public class WrapperDemo {
+
+	public static void main(String[] args) {
+		int var = 112;
+		Integer obj = new Integer (var);   //Boxing
+		System.out.println(var+" "+obj);
+		
+		Integer onj1= var;  //AutoBoxing
+		/* object to primitive*/
+		
+		int y = obj.intValue(); //unboxing
+		int x = obj;
+		System.out.println("x = "+x+" y = "+y);
+	}
+
+}

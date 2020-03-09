@@ -1,0 +1,5 @@
+package com.psl.userDb.util;
+
+public class DBUtil {
+
+}

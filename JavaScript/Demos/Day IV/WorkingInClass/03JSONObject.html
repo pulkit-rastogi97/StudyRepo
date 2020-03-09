@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id = "demo"> This content is going to change</div>
+  <button onclick="loadDoc('../AJAX_FILES/myjson.json')">Click to Change</button>
+  <p>
+      <b>Status Code</b>
+      <span id = 'A1'></span>
+  </p>
+  <p>
+    <b>Status Text</b>
+    <span id = 'A2'></span>
+    </p>
+    <p>
+        <b>Response Text</b>
+        <span id = 'A3'></span>
+    </p>
+
+  <script>
+      function loadDoc(url)
+      {
+          var xhttp = new XMLHttpRequest();
+
+          xhttp.onreadystatechange = function()
+          {
+              if(xhttp.readyState === 4 && xhttp.status === 200)
+              {
+                  document.getElementById('A1').innerHTML = xhttp.status;
+                  document.getElementById('A2').innerHTML = xhttp.statusText;
+                 // document.getElementById('A3').innerHTML = xhttp.responseText;
+                 var jsonArr = JSON.parse(xhttp.responseText);
+                 var displayArr= function(jsonArr)
+                 {
+                     var str="";
+                     for(var i in jsonArr)
+                     {
+                         str+=" <br> Name : "+jsonArr[i].name+' , Country : '+jsonArr[i].country;
+                     }
+                     document.getElementById('A3').innerHTML=str;
+
+                 };
+                 displayArr(jsonArr);
+              }
+          };
+          xhttp.open('GET',url,true);
+          xhttp.send();
+      };
+      
+      
+  </script>  
+</body>
+</html>

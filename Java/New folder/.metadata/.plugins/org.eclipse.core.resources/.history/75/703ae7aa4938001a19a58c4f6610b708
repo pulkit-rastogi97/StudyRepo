@@ -1,0 +1,9 @@
+package snippet;
+class Test{
+public static void main(String[] args)
+{
+double doubleVar = 10.5; 
+float floatVar = doubleVar; 
+System.out.println("Float value "+floatVar);
+}
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Number
+        // String
+        // Date
+        // Array
+        // Boolean
+        // Math, etc
+        
+        // String
+        var txt = "Hello World!";
+        document.write('<br>'+txt.length);
+        document.write('<br>'+txt.toUpperCase());
+
+        // Date
+        var d = Date.now(); // time elapsed in ms since 1 Jan, 1970
+        document.write('<br>Date is '+d);
+
+
+        var d1 = new Date(); //today's date time in long format
+        document.write('<br> Date is '+d1);
+
+        var hours = d1.getHours();
+        var mins = d1.getMinutes();
+        var seconds = d1.getSeconds();
+
+        var day = d1.getDay();
+
+        var arr1 = new Array(11, 22);
+        // var arr1 = Array(11, 22);
+
+        var cars = ["BMW","Audi", "Nano","Merc"];
+
+        alert(arr1.length);
+
+        function foo() {
+            return "Inside Foo!";
+        }
+
+        var mixArr = [11, 15.6, 'c', 'str', Date(), cars, foo];
+
+        var value = Math.pow(5, 3);
+        document.write('<br> Value: '+value);
+        value = Math.random();
+        document.write('<br> Value: '+value);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+package com.psl.prodApp.util;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import com.psl.prodApp.exception.ProdAppException;
+
+public class DBUtil {
+
+	static Connection con = null;
+	static {
+		
+		Properties properties = new Properties();
+		try {
+			properties.load(new FileInputStream("jdbc.properties"));
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		final String URL = properties.getProperty("url");
+		final String JDBC_DRIVER = properties.getProperty("driver");
+		final String USER = properties.getProperty("user");
+		final String PASS = properties.getProperty("password");
+		
+		try{
+			Class.forName(JDBC_DRIVER);
+			con = DriverManager.getConnection(URL,USER,PASS);
+		}catch(SQLException | ClassNotFoundException e)
+		{
+			try {
+				throw new ProdAppException(e.getMessage());
+			} catch (ProdAppException e1) {
+					System.out.println(e1.getMessage());
+			}
+		}
+	
+	}
+	public static Connection getConnection()
+	{
+		return con;
+	}
+	
+}

@@ -1,0 +1,21 @@
+package com.psl.Question3.test;
+
+import org.junit.*;
+
+import com.psl.Question3.dto.Student;
+
+public class StudentTest {
+
+	Student s;
+	@Before
+	public void init()
+	{
+		s=new Student();
+	}
+	@After
+	public void destroy()
+	{
+		s=null;
+	}
+	
+}

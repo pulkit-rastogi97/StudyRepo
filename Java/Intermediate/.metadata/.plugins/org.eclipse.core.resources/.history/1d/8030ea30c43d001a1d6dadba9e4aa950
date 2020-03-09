@@ -1,0 +1,51 @@
+package com.psl.busBooking.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+
+import com.psl.busBooking.dto.Bus;
+import com.psl.busBooking.util.DBUtil;
+
+public class BusBookingDaoImpl implements BusBookingDao{
+
+	Connection con;
+	public BusBookingDaoImpl()
+	{
+		con = DBUtil.getConnection();
+	}
+	@Override
+	public HashMap<Integer, Bus> showAllBusDetails() {
+		HashMap<Integer,Bus> map = new HashMap<Integer,Bus>();
+		String sql = "SELECT * FROM BusDetails";
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				int busId = rs.getInt(1);
+				map.put(busId, new Bus(busId,rs.getString(2),rs.getString(3),rs.getString(4),rs.getDate(5).toLocalDate(),rs.getInt(6)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public HashMap<Integer, Bus> getBusDetails(String from, String to) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Bus bookBus(int busId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

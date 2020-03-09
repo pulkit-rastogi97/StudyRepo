@@ -1,0 +1,57 @@
+package com.psl.prodApp.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.psl.prodApp.dto.Product;
+import com.psl.prodApp.util.DBUtil;
+
+public class ProductDaoImpl implements ProductDao{
+
+	Connection con;
+	public ProductDaoImpl()
+	{
+		con=DBUtil.getConnection();
+	}
+	
+	@Override
+	public Product addProduct(Product obj) {
+		String sql = "SELECT * FROM categories ";
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				System.out.println(rs.getInt(1)+" "+rs.getString(2));
+			}
+		} catch (SQLException e) {
+						e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+
+	@Override
+	public HashMap<Integer, Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Product> getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product deleteProduct(int productid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class MainStudent {
+
+	public static void main(String[] args) {
+		Student stu = new Student(12,"Poorvi");
+		System.out.println("stu = "+stu);
+		/*
+		 * System.out.println("stu = "+stu.toString());
+		 */
+	}
+}

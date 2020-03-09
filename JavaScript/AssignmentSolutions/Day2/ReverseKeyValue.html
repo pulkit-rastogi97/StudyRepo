@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyValueReverse</title>
+</head>
+<body>
+    <script>
+        var Person = {
+            Name: 'Pulkit',
+            City: 'Pune',
+            Age: 23,
+        };
+        var output={};
+
+        for(var value of Object.entries(Person))
+        {
+            //key : value[0];
+            //value : value[1];
+            
+            output[value[1]]=value[0];
+
+            //output[key]=value;
+        }
+
+        for(var value of Object.entries(output))
+        {
+            document.write(value[0]+" : "+value[1]+" <br> ");
+
+        }
+    </script>
+</body>
+</html>

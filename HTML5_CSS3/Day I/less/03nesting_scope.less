@@ -1,0 +1,23 @@
+// ul{
+//     background-color: indigo;
+//     padding: 10px;
+//     list-style: none;
+//     li{
+//         background-color: aqua;
+//         border-radius: 3px;
+//         margin: 10px 0;
+//     }
+// }
+
+@textColor: black;
+ul{
+    @textColor: yellow;
+    background-color: indigo;
+    padding: 10px;
+    list-style: none;
+    li{
+        background-color:@textColor;
+        border-radius: 3px;
+        margin: 10px 0;
+    }
+}

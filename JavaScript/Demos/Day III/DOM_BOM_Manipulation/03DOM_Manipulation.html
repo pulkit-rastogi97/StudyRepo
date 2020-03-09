@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 5px;
+        }
+
+        p {
+            font-size: x-large;
+        }
+
+        #opener {
+            color: green;
+        }
+
+        .closer {
+            background-color: peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <p id='opener'>First Paragraph!</p>
+    <p>Second Paragraph!</p>
+    <p class='closer'>Third Paragraph!</p>
+    <p class='closer'>Fourth Paragraph!</p>
+    <div class='closer'>This is div with class closer!</div>
+    <div>This is simple div!</div>
+    <br/>
+    <span>This is outer span!</span>
+    <div>
+        <span>This is inner span to div!</span>
+        <br/>
+        <span>This is one more inner span to div!</span>
+        <br/>
+    </div>
+    
+    <button id="btnChange">Change!</button>
+
+    <script>
+        document.getElementById('btnChange').onclick = function() {
+
+            // var p1 = document.getElementById('opener');
+            // p1.style.color = 'red';
+
+            // querySelector
+            // var p1 = document.querySelector('#opener');
+            // p1.style.color = 'maroon';
+
+            // // span whose parent is div, only first match
+            // var innerSpan = document.querySelector('div > span');
+            // innerSpan.style.color = 'yellow';
+            // innerSpan.style.backgroundColor = 'green';
+
+            // span whose parent is div, all spans
+            // var innerSpanArr = document.querySelectorAll('div > span');
+            // for(var i in innerSpanArr) {
+            //     innerSpanArr[i].style.color = 'yellow';
+            //     innerSpanArr[i].style.backgroundColor = 'green';
+            // }
+
+            // var elementsArr = document.getElementsByClassName('closer');
+
+
+            var newPara = document.createElement('p');
+            newPara.innerHTML = 'New Para';
+            newPara.style.backgroundColor = 'palegreen';
+            newPara.style.width = '200px';
+            newPara.style.border = 'solid 5px Navy';
+
+            document.body.appendChild(newPara);
+
+            var delPara = document.getElementsByTagName('p')[2];
+            document.body.removeChild(delPara);
+        }
+    
+    
+    </script>
+</body>
+</html>

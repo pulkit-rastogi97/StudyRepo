@@ -1,0 +1,378 @@
+
+https://persistentuniversity.persistent.co.in/
+CollaborativeLearningGroup/view.aspx?SkillId=10274
+
+
+Introduction to Database System
+---------------------------------
+
+Database - a place for storage of data
+	   Organised Collection of related data
+	   Stored on Disk
+	   Accessible by many concurrent users
+
+DBMS - Database Management System
+	Set of programs which manages the Database
+
+Relational DBMS
+		Relation - 2 D table
+		Collection of Relations / 2 D tables
+		Set of operators to act on those relations
+		maintaining the integrity/consistency of data
+
+
+ERD - 
+	Entity Relationship Diagram
+
+	3 components
+	- Entity - an important thing for whiich info needs to be stored
+	Employee, Department, Project, Customers, Suppliers, Products etc
+
+	- Attribute - something which describes the entity
+	Departmentid, name, location, HOD etc
+	Employeeid, name, gender, salary, department, job_profile etc
+
+	- Relationship - Association between the entities
+
+	  Types
+		1 - 1
+		Emp - Adhaar_Card_Dtls
+		Emp - passport
+
+		1 - M
+		Dept - Emp
+		1       M
+		1	1
+		Team - player
+
+		M - M
+
+		1 - M
+		M - 1
+
+		Emp : Project
+		Author : Book
+
+
+Constraints
+---------------
+
+to enforce rules on a tables to maintain integrity of data
+
+- NOT NULL
+- UNIQUE	non duplicate data
+		UNIQUE + NULL values allowed
+		1 Table - Many unique keys
+- PRIMARY KEY - used to uniquely identify each row in a table
+		UNIQUE + NOT NULL
+		1 table - One Primary key
+		
+- FOREIGN KEY - Reference to the primary key of another table
+		can contain duplicate values
+		can contain null values
+
+- DEFAULT	- Default value for a column
+		hiredate Date Default '01-FEB-19'
+- CHECK		- User defined constraint
+		gender varchar2(1) CHECK ( Gender in ('M','F'))
+
+
+Employee
+Emp_id .........  ID (FK )
+PK
+
+Adhaar_card
+ID ......
+PK		
+
+-----------------------------------------------------------------
+
+
+ 1 : 1
+
+Emp
+Empid, name job_id, hiredate, Salary, dept_id , passport_id (fk)
+PK
+1						20
+2						30
+3						10
+5						50
+6						60	
+7
+8						null
+9
+
+Passport_Dtls
+id, Passport_number, name, expiry_date ...... , [Empid fk ]
+PK
+10
+20
+30
+40
+60
+70
+
+
+1 : M
+Dept : Emp
+
+PK of one side table should go in Many side table as FK
+
+1
+Dept
+Deptid, name .......
+10
+20
+30
+50
+
+M
+Emp
+Empid, name, job_id, salary .......... , Deptid
+1					10
+2					10
+3					20
+4					10
+6					50
+7					null
+	
+
+M : M
+
+Author : Book
+
+M
+Author
+Authid, name, address, city ....
+PK
+10					
+20					
+30
+40
+60
+
+M
+Book
+Book_id , name Publish date, publish_house ....
+PK
+1							
+2							
+3							
+6
+
+Bridge table
+
+Book_author table
+Authid (FK), Book_id (FK)
+10		1
+10		2
+10		3
+20		4
+30		4
+
+-----------------------------------------
+
+Types of SQL statements
+
+DDL - Data Definition Language (Basic )
+	CREATE
+	ALTER
+	DROP
+	TRUNCATE
+	RENAME
+
+DML - Data Manipulation Language ( Basic)
+	INSERT
+	UPDATE
+	DELETE
+
+DCL - Data Control Language	(Intermediate )
+	GRANT
+	REVOKE
+
+TCL - Transaction Control Language	(Intermediate )
+	COMMIT
+	ROLLBACK
+	SAVEPOINT
+
+Data Retrieval 
+		SELECT		(Basic)
+
+
+
+
+DDL statements
+--------------
+
+CREATE
+ALTER
+	- add New column
+	- Modify the column
+	- Drop a column
+	- add , remove constraints
+
+DROP
+	remove the structure as well as data
+
+TRUNCATE
+	remove the entire data from your table
+	table structure will remain as it  is
+
+RENAME
+
+-----------------------------------
+
+SELECT statement
+
+
+select * / column names
+from Table_name
+
+ - SQL Queries are not case sensative
+ - values in the table are case sensative
+
+Arithmatic operators
+		+ - * /
+
+Concatenation operator
+			||	
+
+Where clause
+		to apply row level filter condition
+
+Comparison operators
+Basic		= > < >= <= <>
+Advance		IN		to compare with list of values
+		BETWEEN		to compare within range of values
+		IS NULL
+		LIKE		wild card search
+				_  any single character
+				% 0 or more characters
+
+
+Logical operators
+			AND
+			OR
+			NOT
+
+ORDER BY clause
+
+		to sort the data
+
+Order by clause is the ONLY clause in SELECT statement where user can refer the column alaises
+
+Order by clause can contain
+	column name
+	column alais
+	column position
+
+Order by clause can contain
+		Number column
+		Character column
+		Date column
+
+
+DML statements
+
+
+Data Manpulation Language
+
+INSERT - add new rows
+UPDATE - Modify existing rows
+DELETE - remove rows from the table
+
+
+INSERT
+
+Insert into table_name[(Column names)]
+Values ( ..... )
+
+
+Substitution variable
+
+	&Variable_name
+
+
+UPDATE
+
+to modify data in the table
+
+can modify multiple rows / multiple columns at a time
+
+
+Update table_name
+Set column= Value
+[ Where <condition > ]
+
+
+DELETE
+
+to remove rows from the table
+
+
+
+Delete from tablname
+[ Where condition ]
+
+Common error 
+	Integrity constraint violated
+
+
+
+
+FUNCTIONS
+
+- can accept arguments
+- can return value
+- can modify datatype
+- can be nested
+- an manipulate data items
+
+Single row functions
+
+	----> 1 value ----> Function ---> 1 value
+
+	Character
+		Case manipulation
+			UPPER
+			LOWER
+			INITCAP
+
+		Char manipulation
+			SUBSTR
+			INSTR
+			CONCAT
+			REPLACE
+			LPAD/RPAD	 HW
+			LENGTH
+	Numeric
+		TRUNC
+		ROUND
+		MOD
+
+	Date
+		ADD_MONTHS
+		MONTHS_BETWEEN
+		NEXT_DAY
+		LAST_DAY
+		TRUNC		HW
+		ROUND		HW
+
+	Generic
+		NVL
+			If null replace with 2nd parameter
+		NVL2
+			If null replace with 3rd parameter
+			if it does not contain null value, replace with 2nd parameter
+
+
+
+Multiple row functions / Aggregate / Group functions  ( Intermediate )
+
+
+
+
+
+
+Assignments
+--------------

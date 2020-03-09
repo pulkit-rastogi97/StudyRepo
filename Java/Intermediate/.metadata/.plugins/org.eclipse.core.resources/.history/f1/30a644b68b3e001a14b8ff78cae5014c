@@ -1,0 +1,54 @@
+package com.psl.prodApp.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.psl.prodApp.dao.ProductDao;
+import com.psl.prodApp.dao.ProductDaoImpl;
+import com.psl.prodApp.dto.Product;
+import com.psl.prodApp.exception.ProdAppException;
+import com.psl.prodApp.service.ProductServiceImpl;
+
+public class TestProdApp {
+
+	ProductDao dao ;
+	ProductServiceImpl service;
+	
+	@Before
+	public void init()
+	{
+		dao = new ProductDaoImpl();
+		service = new ProductServiceImpl();
+		service.setDao(dao);
+	}
+	
+	@After
+	public void destroy()
+	{
+		dao = null;
+		service = null;
+		
+	}
+	
+	@Test
+	public void testaddproduct()
+	{
+		Product test = null;
+		try {
+			Product pro = new Product(1,1,"Physics");
+			test = service.addProduct(pro, "electronics");
+		} catch (ProdAppException e) {
+			
+			System.out.println(e.getMessage());
+		}
+		assertNotNull(test);
+	}
+	
+//	Product addProduct(Product obj, String categoryName) throws ProdAppException;
+//	HashMap<Integer,Product> getAllProducts() throws ProdAppException;
+//	ArrayList<Product> getProductById(int productId) throws ProdAppException;
+//	Product deleteProduct(int productid) throws ProdAppException;
+}

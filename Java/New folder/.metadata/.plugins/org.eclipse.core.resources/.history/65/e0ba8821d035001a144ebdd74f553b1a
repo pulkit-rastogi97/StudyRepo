@@ -1,0 +1,23 @@
+import java.util.Iterator;
+import java.util.Vector;
+
+public class VectorDemo {
+	public static void main(String[] args) {
+		Vector<Integer> obj = new Vector<>();
+		System.out.println("size = "+obj.size());
+		System.out.println("capacity = "+obj.capacity());
+		obj.add(12);  //Integer obj = 12;
+		obj.add(5);
+		obj.add(20);
+		obj.add(22);
+	obj.add(2);
+	obj.add(27);
+	System.out.println("size = "+obj.size());
+	System.out.println("capacity = "+obj.capacity());
+	
+	Iterator<Integer> iterator = obj.iterator();
+	while(iterator.hasNext())
+		System.out.println(iterator.next());
+
+	}
+}

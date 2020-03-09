@@ -1,0 +1,20 @@
+package Exception;
+
+public class DivisionDemo {
+	
+	public static int division(int num, int data)
+	{
+		return num/data;
+	}
+	
+	public static void main(String[] args) {
+	
+		int num=9,data=0,res;
+		System.out.println("division starts ");
+		res=division(num,data);
+		System.out.println("Division Complete");
+		System.out.println("res = "+res);
+		
+	}
+
+}

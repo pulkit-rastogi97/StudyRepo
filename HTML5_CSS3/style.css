@@ -1,0 +1,98 @@
+/* div{
+    background-color: peachpuff;
+}
+
+li.b{
+    color : red;
+}
+ */
+
+ /* CSS# Selectors */
+
+ /* Select all div and all p tags */
+
+ /* div p{
+     color : blue;
+ } */
+
+ /* Select all p where parent is div */
+
+ /* div > p{
+    color : pink;
+ } */
+
+ /* select all p those are placed immediately after div element */
+/* 
+ div+p{
+     color : green;
+ } */
+
+ /* select every div element that is preeceded by p element */
+
+ /* p ~ div{
+    color : darkblue;
+ } */
+
+
+ /* Advanced Selectors in CSS3 */
+/* pseudo class - used to define special state of an element */
+/* syntax -> selector : state(hover) */
+/* 
+div:click{
+    color : red;
+} */
+
+/* p:first-of-type{
+    background-color: salmon;
+}
+
+
+p:last-of-type{
+    background-color: navy;
+} */
+
+/* ul:only-of-type{
+    background-color: seagreen;
+} */
+
+/* states for link : active, hover, visited, unvisited */
+
+/* a:link{
+    color: green;
+}
+
+a:visited{
+    color: yellow;
+}
+
+body *:hover{
+    color: red;
+}
+
+Pseudo element is used to style specified parts of an html element */
+/* 
+p::first-letter{
+    color: red;
+} */
+
+/* 
+p::first-line{
+    color:red;
+} */
+/* 
+h1::before{
+    content: url('./images/smiley.jpg');
+}
+
+div::selection{
+    color : yellow;
+    background-color: green;
+}
+ */
+
+ /* ::selection{
+    color : yellow;
+    background-color: green;
+ } */
+
+ 

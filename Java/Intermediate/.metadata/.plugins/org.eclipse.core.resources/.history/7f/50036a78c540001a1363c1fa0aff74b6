@@ -1,0 +1,35 @@
+package com.psl.userDb.test;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import com.psl.userDb.dao.UserDaoImpl;
+import com.psl.userDb.dto.UserDetails;
+import com.psl.userDb.service.UserServiceImpl;
+
+//@RunWith(MockitoJUnitRunner.class)
+public class ApplicationTest {
+
+	@Mock
+	UserServiceImpl service;
+	
+	@Mock
+	UserDaoImpl dao;
+	
+	@Test
+	public void save() throws Exception
+	{
+		//service.setDao(dao);
+		UserDetails details = new UserDetails();
+		details.setUserName("Pulkit");
+		details.setPassword("1234");
+		UserDetails ref = service.addUser(details);
+		System.out.println(ref);
+		assertNotNull(ref);
+	}
+}

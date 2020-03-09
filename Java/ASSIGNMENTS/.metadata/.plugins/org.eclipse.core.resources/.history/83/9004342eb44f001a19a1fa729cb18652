@@ -1,0 +1,5 @@
+package assignmen1;
+
+public class FeedingSchedule {
+	public static void main(String[] args) { 3:    boolean keepGoing = true; 4:    int count = 0; 5:    int x = 3; 6:    while(count++ < 3) { 7:      int y = (1 + 2 * count) % 3; 8:      switch(y) { 9:         default: 10:         case 0: x -= 1; break; 11:         case 1: x += 5; 12:      } 13:    } 14:  System.out.println(x);
+}

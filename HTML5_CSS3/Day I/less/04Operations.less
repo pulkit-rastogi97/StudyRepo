@@ -1,0 +1,27 @@
+@div-width: 100px;
+@color: blue;
+@fore-color: white;
+
+div{
+    height: 50px;
+    display: inline-block;
+    border: gray solid 3px;
+
+}
+
+#left
+{
+    width: @div-width;
+    color: @fore-color;
+    background-color: @color + 100;
+    border: gray solid 3px;
+}
+
+#right
+{
+    width: @div-width * 2;
+    color: @fore-color;
+    background-color: @color;
+    border: gray solid 3px;
+
+}

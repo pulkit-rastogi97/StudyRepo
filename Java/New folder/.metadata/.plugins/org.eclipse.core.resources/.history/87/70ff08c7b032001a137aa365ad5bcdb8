@@ -1,0 +1,24 @@
+
+public class Employee {
+	private int empId;
+	private String empName;
+	private int empSal;
+	public Employee()
+	{
+		
+	}
+	public Employee(int empId, String empName, int empSal )
+	{
+		this.empId=empId;
+		this.empName = empName;
+		this.empSal = empSal;
+	}
+	public void Display()
+	{
+		System.out.println("empId = "+empId+" empName = "+empName+" empSal = "+empSal);
+	}
+	public double calSal()
+	{
+		return 0.0;
+	}
+}

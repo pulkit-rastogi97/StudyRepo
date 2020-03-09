@@ -1,0 +1,13 @@
+package com.psl.prodApp.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import com.psl.prodApp.dto.Product;
+
+public interface ProductDao {
+	Product addProduct(Product obj);
+	HashMap<Integer,Product> getAllProducts();
+	ArrayList<Product> getProductById(int productId);
+	Product deleteProduct(int productid);
+
+}

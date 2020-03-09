@@ -1,0 +1,17 @@
+
+public class CoherentReturnMain {
+	
+	public static void main(String[] args) {
+		
+		Object ref = getObject();
+		System.out.println("ref = "+ref);
+	}
+	
+	public static Object getObject()
+	{
+		Object ref = null;
+		ref = new String("abc");
+		return ref;
+	}
+
+}

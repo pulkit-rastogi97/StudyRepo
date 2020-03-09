@@ -1,0 +1,179 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">This is a simple para!</p>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        document.addEventListener('click', function() {
+            // alert('clicked the doc!');
+
+            // var p1 = $('p1');
+            // p1.innerHTML = "Hello World!";
+            $('p1').innerHTML = "Hello World!";
+            $('p1').style.backgroundColor = 'orange';
+        });
+    
+        document.addEventListener('click', function() {
+            $('p1').innerHTML += "<br> Just to say Hi!";
+            $('p1').style.color = 'white';
+            $('p1').style.fontSize = 'xx-large';
+        });
+
+
+
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #d1 {
+            background-color: peachpuff;
+            color: maroon;
+            border: 1px solid;
+            padding: 40px;
+            height: 30px;
+            width: 300px;
+        }
+        #d2 {
+            background-color: palegreen;
+            color: maroon;
+            border: 1px solid;
+            padding: 50px;
+            height: 30px;
+            width: 300px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <p id="p1">This is bubbling! Child to Parent!</p>
+    </div>
+    <div id="d2">
+        <p id="p2">This is capturing! Parent to Child!</p>
+    </div>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    
+        $('d1').addEventListener('click', function() {
+            alert('You clicked d1!');
+        }, false); // false is default - ie. bubbling - child to parent
+        $('p1').addEventListener('click', function() {
+            alert('you clicked p1!');
+        }, false);
+
+        $('d2').addEventListener('click', function() {
+            alert('You clicked d2!');
+        }, true); // true - ie. capturing - parent to child
+        $('p2').addEventListener('click', function() {
+            alert('you clicked p2!');
+        }, true);
+
+
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: peachpuff;
+            color: maroon;
+            border: 1px solid;
+            padding: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" id="myBtn" value="Remove!">
+    </div>
+    <p id="p1"></p>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    
+        function foo(evt) {
+            $('p1').innerHTML = (evt.pageX + " " + evt.pageY);
+        }
+
+        $('div1').addEventListener('mousemove', foo);
+
+        $('myBtn').addEventListener('click', removeFoo);
+
+        function removeFoo() {
+            $('div1').removeEventListener('mousemove', foo);
+        }
+    
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Name: <input type="text" id="txtInput">
+    <br><br>
+    Hello <span id="spanName"></span>
+    <br><br>
+    All Keys <span id="allKeys"></span>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    
+        $('txtInput').addEventListener('blur', function() {
+            
+        });   //focusout
+
+        $('txtInput').addEventListener('blur', foo); //blur, focusout
+        $('txtInput').addEventListener('keyup', bar); //keyup, keydown, keypress
+
+        function foo() {
+            $("spanName").innerHTML = $('txtInput').value;
+        }
+
+        function bar(evt) {
+            $('allKeys').innerHTML += evt.key.toString();
+        }
+
+    </script>
+</body>
+</html>

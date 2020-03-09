@@ -1,0 +1,20 @@
+package com.psl.service;
+
+import java.util.ArrayList;
+
+import com.psl.bean.Employee;
+import com.psl.dao.EmployeeDao;
+
+public class EmployeeService {
+
+	EmployeeDao dao;
+	
+	public EmployeeService()
+	{
+		dao = new EmployeeDao();
+	}
+	public ArrayList<Employee> getAllEmployees()
+	{
+		return dao.getAllEmployees();
+	}
+}

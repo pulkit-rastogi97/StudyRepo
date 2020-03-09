@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* span {
+            color: green;
+            background-color: yellow;
+            font-size: xx-large;
+        } */
+        /* #spanAdd {
+            color: green;
+            background-color: yellow;
+            font-size: xx-large;
+        }
+        #spanMult {
+            color: yellow;
+            background-color: green;
+            font-size: xx-large;
+        } */
+    </style>
+    <link rel="stylesheet" href="./css/05myStyles.css">
+    <script src="./lib/05mymath.js"></script>
+</head>
+<body>
+    <!-- <b>Addition is </b> -->
+    <!-- inline style -->
+    <!-- <span style="color: maroon; background:peachpuff; font-size: xx-large;" id='spanAdd'>9</span> -->
+    <span id='spanAdd'></span>
+    
+    <!-- <br><b>Mutliplication is </b> -->
+    <!-- inline style -->
+    <!-- <span style="color: maroon; background:peachpuff; font-size: xx-large;" id='spanAdd'>20</span> -->
+    <span id='spanMult'></span>
+
+    <script>
+        // var result = 4 + 5;
+        // function add(x, y) {
+        //     return x + y;
+        // }
+        // function mult(x, y) {
+        //     return x * y;
+        // }
+    
+        // alert - message box
+        // prompt - asking input from user
+        // confirm - confir ok or cancel
+
+        // var no1 = parseInt(prompt("please enter first no: ", 10));
+        // var no2 = Number(prompt("please enter second no: ", 20));
+
+        // var result = add(no1,no2);
+        // document.getElementById('spanAdd').innerText = result;
+        // var result = mult(no1,no2);
+        // document.getElementById('spanMult').innerText = result;
+
+        // var p = confirm("Do you want to proceed?");
+        // if(p == true) {
+        //     alert('proceed');
+        // }
+        // else {
+        //     alert('cancel');
+        // }
+
+        // parseInt and Number
+        document.write('<br>'+parseInt('123'));
+        document.write('<br>'+parseInt('123abcd')); //123
+        document.write('<br>'+parseInt('a123')); // NaN
+        document.write('<br>'+parseInt('123e-2')); // 123
+        document.write('<br>'+Number('123e-2')); // 1.23
+        document.write('<br>'+parseInt('101',10)); //101
+        document.write('<br>'+parseInt('101',2)); // 5
+        document.write('<br>'+parseInt('101',8)); // 65
+        document.write('<br>'+parseInt('101',16)); // 257
+        
+
+
+    </script>
+</body>
+</html>

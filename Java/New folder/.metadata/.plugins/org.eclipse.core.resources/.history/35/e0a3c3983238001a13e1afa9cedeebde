@@ -1,0 +1,15 @@
+package com.psl.pl;
+
+import java.util.ArrayList;
+
+import com.psl.bean.Employee;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Employee> emp = new ArrayList<Employee>();
+		emp=Employee<ArrayList>
+	}
+
+}

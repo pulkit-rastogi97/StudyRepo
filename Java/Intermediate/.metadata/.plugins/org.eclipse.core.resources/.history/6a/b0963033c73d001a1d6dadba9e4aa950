@@ -1,0 +1,5 @@
+package com.psl.busBooking.service;
+
+public class BusBookingServiceImpl implements BusBookingService{
+
+}

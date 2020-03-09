@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Operations</title>
+    <script src="./TableOperations.js"></script>
+    <link rel="stylesheet" href="./TableOperations.css">
+</head>
+<body>
+    
+    <table id = 'tb1'>
+        <tr >
+            <td>Name</td>
+            <td>Branch</td>
+            <td>Age</td>
+        </tr>
+        <tr>
+            <td>Pulkit Rastogi</td>
+            <td>Computer Science</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Apurva Bagaria</td>
+            <td>Software Engineering</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Vijay Kashyap</td>
+            <td>Electronics</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>Shivam Kumar</td>
+            <td>Computer Science</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Charlotte Lidwina Sebastian</td>
+            <td>Accounts & Finance</td>
+            <td>23</td>
+        </tr>
+    </table>
+
+    <button id = "AlterNativeRowColor">Alternative Background Color To Rows</button>
+    <button id = "AlterNativeCellTextColor"> Alternative Text Color To Column Elements </button>
+    <button id = "BoldHeaderFont"> Header Font Style Bold </button>
+    <button id = "LastCellItalicText"> Last Element of Each Column Italic Font </button>
+    <button id = "FirstElementRowUnderLine"> Fist Element of Each Row UnderLine </button>
+
+
+    <script>
+        $('AlterNativeRowColor').onclick=AlterNativeRowColor;
+        $('AlterNativeCellTextColor').onclick=AlterNativeCellTextColor;
+        $('BoldHeaderFont').onclick=BoldHeaderFont;
+        $('LastCellItalicText').onclick=LastCellItalicText
+        $('FirstElementRowUnderLine').onclick=FirstElementRowUnderLine;  
+    </script>
+</body>
+</html>

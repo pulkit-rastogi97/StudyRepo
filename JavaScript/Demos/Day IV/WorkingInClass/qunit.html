@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+<body>
+    <div id = "qunit">
+
+    </div>
+
+    <div id  ="qunit-fixture">
+
+    </div>
+
+    <script >
+        // QUnit.test('a base test example', function(assert)
+        // {
+        //     var value = "Hello";
+        //     assert.equal(value,"Hello","We expect to be Hello");
+        // });
+
+        // QUnit.test('ok test', function(assert)
+        // {
+        //     var arr =[];
+
+        //     assert.ok({},"true succeeds");
+        // });
+
+        // QUnit.test("equals test",function(assert){
+        //     assert.equal(0,0," 00 succeeds");
+        //     assert.equal({},{1:2}," 00 succeeds");
+        //     assert.equal(0,0," 00 succeeds");
+        //     assert.equal(0,0," 00 succeeds");
+        //     assert.equal(0,0," 00 succeeds");
+        //     assert.equal(0,0," 00 succeeds");
+        //     assert.equal(0,0," 00 succeeds");
+        //     assert.equal(0,0," 00 succeeds");
+        // });
+
+        // QUnit.test('deepEqual',function(assert)
+        // {
+        //     var obj = [{foo:'bar'}];
+        //     assert.deepEqual(obj,{foo:'bar'},"hii");
+        // });
+
+        QUnit.module('M1');
+        QUnit.test('ok test1', function(assert)
+        {
+            assert.ok(true,"true succeeds");
+        })
+        QUnit.test('ok test2', function(assert)
+        {
+            assert.ok(true,"true succeeds");
+        })
+        QUnit.module('M2');
+        QUnit.test('ok test1', function(assert)
+        {
+            assert.ok(true,"true succeeds");
+        })
+        QUnit.test('ok test2', function(assert)
+        {
+            assert.ok(true,"true succeeds");
+        })
+
+
+        
+    </script>
+    
+</body>
+</html>

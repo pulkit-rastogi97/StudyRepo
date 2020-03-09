@@ -1,0 +1,13 @@
+package test;
+
+import oops.fourB.ClassDemo;
+
+public class ClassCheck {//extends ClassDemo{
+
+	
+	
+	public static void main(String[] args) {
+		ClassDemo obj = new ClassDemo();
+		 System.out.println(obj.b);
+	}
+}

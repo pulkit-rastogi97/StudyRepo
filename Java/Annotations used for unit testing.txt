@@ -1,0 +1,21 @@
+@Before - executes before each test method
+@After - excutes after each test method
+@BeforeClass
+@AfterClass
+@Test  - use to write test case
+@Ignore - used to ignore test case. will avoid test case execution
+@Failure - used whenever we want a failure test case.
+
+@Before and @After can be used on public, non-static methods only. 
+We can't use them with private and static methods
+
+@BeforeClass will execute only once before all test methods execution and 
+@AfterClass - executes only once after all test methods.
+
+assetSame() - it makes use of == for comparison
+assertEquals
+
+@Before and @After is preferable.
+
+assertNotNull
+assertNotSame

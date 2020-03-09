@@ -1,0 +1,18 @@
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class FunctionalInterfaceMain {
+	public static void main(String[] args) {
+		
+		Supplier<String> supplier = () -> sayHello();   //sysout should not be used because it return void 
+		System.out.println("supplier data = "+supplier.get());
+		
+		Consumer consume = (str)->System.out.println(str);
+		consume.accept(supplier.get());
+		
+	}
+	public static String sayHello()
+	{
+		return "Hello";
+	}
+}

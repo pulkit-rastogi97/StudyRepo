@@ -1,0 +1,8 @@
+
+public class ThreadAccount {
+
+	public ThreadAccount() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.psl.prodApp.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.psl.prodApp.dto.Product;
+
+public class ProductDaoImpl implements ProductDao{
+
+	@Override
+	public Product addProduct(Product obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<Integer, Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Product> getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product deleteProduct(int productid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,43 @@
+import static org.junit.Assert.*;
+
+import org.junit.*;
+public class TestCalculator {
+
+	Calculator ref;
+	
+	@Before
+	public void init()
+	{
+		System.out.println("call to @Bfore ");
+		ref = new Calculator();
+	}
+	
+	@After
+	public void destroy()
+	{
+		System.out.println("call to @After");
+		ref = null;
+	}
+	@Test
+	public void testAdd()
+	{
+		int result = ref.add(12,9);
+		assertSame(21,result);
+	}
+	@Test
+	public void testSubtract()
+	{
+		int res = ref.subtract(23, 56);
+		assertNotSame(0,res);
+	}
+	public void testMultiply()
+	{
+		int res = multiply(23, 56);
+		assertNotSame(0,res);
+	}
+	public void testSubtract()
+	{
+		int res = ref.subtract(23, 56);
+		assertNotSame(0,res);
+	}
+}

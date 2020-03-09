@@ -1,0 +1,20 @@
+package com.psl.pl;
+
+import java.util.ArrayList;
+
+import com.psl.bean.Employee;
+import com.psl.service.EmployeeService;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		EmployeeService service = new EmployeeService();
+		ArrayList<Employee> list = 
+				service.getAllEmployees();
+		for(Employee emp : list)
+			System.out.println(emp);
+	}
+
+}

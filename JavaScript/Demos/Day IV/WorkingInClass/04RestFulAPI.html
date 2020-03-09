@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='d1'></div>
+    <button id='btnGet'>GET Posts</button>
+    <button id='btnPost'>ADD Posts</button>
+
+    <script>
+        var url = 'https://jsonplaceholder.typicode.com/posts';
+
+        function $(id)
+        {
+            return document.getElementById(id);
+        }
+
+        $('btnGet').onclick=GetPost;
+
+        function GetPost()
+        {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function()
+            {
+                if(xhttp.readyState === 4 && xhttp.status === 200)
+                {
+                    var jsonArr = JSON.parse(xhttp.responseText);
+                    displayArr(jsonArr);
+                }
+            };
+            function displayArr(arr)
+            {
+                var outString="";
+                for(var i in arr)
+                {
+                    outString+="<br> UserID = "+arr[i].userId+" , id = "+arr[i].id+" , title = "+arr[i].title;
+                }
+                $('d1').innerHTML = outString;
+            };
+            xhttp.open('GET',url,true);
+            xhttp.send();
+        }
+
+        $('btnPost').onclick=AddPost;
+
+        function AddPost()
+        {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function()
+            {
+                if(xhttp.readyState === 4 && xhttp.status === 201)
+                {
+                   $('d1').innerHTML = xhttp.responseText;
+                }
+            };
+            xhttp.open('POST',url,true);
+
+            xhttp.setRequestHeader("Content-type","application/json; charset=UTF-8");
+            
+            xhttp.send(JSON.stringify({
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1,
+                        }));
+            
+        }
+
+
+    </script>
+</body>
+</html>

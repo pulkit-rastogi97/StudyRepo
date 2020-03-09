@@ -1,0 +1,17 @@
+
+public class MainThread {
+
+	public MainThread() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Thread t1 = new Thread(new MyThread());
+		t1.start();
+		
+		Thread t2 = new Thread(new MyThread());
+		t2.start();
+
+	}
+
+}

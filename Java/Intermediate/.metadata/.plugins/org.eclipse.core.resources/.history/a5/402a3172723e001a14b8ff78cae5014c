@@ -1,0 +1,24 @@
+package com.psl.userDb.util;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.util.Properties;
+
+public class DBUtil {
+
+	static Connection con;
+	static
+	{
+		Properties prop = new Properties();
+		try {
+			prop.load(new FileInputStream("jdbc.properties"));
+			
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

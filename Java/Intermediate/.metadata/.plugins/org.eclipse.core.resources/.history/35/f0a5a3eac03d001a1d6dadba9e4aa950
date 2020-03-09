@@ -1,0 +1,5 @@
+package com.psl.busBooking.dao;
+
+public class BusBookingDao {
+
+}

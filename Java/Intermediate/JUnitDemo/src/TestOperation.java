@@ -1,0 +1,34 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestOperation {
+
+	Operation obj;
+	@Before
+	public void init()
+	{
+		obj = new Operation();
+	}
+	@After
+	public void Destroy()
+	{
+	obj = null;	
+	}
+	
+	@Test
+	public void testSwapOne()
+	{
+		String str = obj.swap(12, 9);
+		assertEquals("912",str);
+	}
+	
+	@Test
+	public void testSwapTwo()
+	{
+		String str = obj.swap("Pune", "Persistent");
+		assertEquals("PersistentPune", str);
+	}
+}

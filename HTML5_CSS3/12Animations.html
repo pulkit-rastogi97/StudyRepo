@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes slidein {
+            from 
+            {
+                margin-left: 90%;
+            }
+           to{
+                margin-left: 0%;
+           }
+        }
+        @keyframes resize {
+            from
+            {
+                height: 0px;
+            }
+            to
+            {
+                height : 300px;
+            }
+        }
+
+        @keyframes multiColor
+        {
+            0%
+            {
+                background-color:red;
+                border-radius: 10px;
+                margin-left: 0%;
+                margin-top: 0%;
+            }
+            25%
+            {
+                background-color:red;
+                border-radius: 10px;
+                position: relative;
+                margin-left: 90%;
+                margin-top: 0%;
+            }
+            50%
+            {
+                position: relative;
+                background-color: blue;
+                border-radius: 15px;
+                 margin-right: 0%; 
+                
+                margin-bottom : 90%;
+            }
+            75%
+            {
+                background-color: goldenrod;
+                border-radius: 20px;
+                position: relative;
+                margin-left: 0%;
+                /* margin-top: 90%; */
+            }
+            100%
+            {
+                background-color: navajowhite;
+                border-radius: 25px;
+                position: relative;
+                margin-left:0%;
+                margin-top: 0%;
+            }
+        }
+        h1
+        {
+            animation-name: slidein;
+            animation-duration: 0.1ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            
+        }
+        div
+        {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: teal;
+        }
+        #div1
+        {
+            height : 2px;
+            width: 200px;
+            background-color: blue;
+            animation: resize 0.00000001ms;
+            animation-direction: alternate-reverse;
+            animation-iteration-count: infinite;
+
+        }
+        .divClass
+        {
+            position: relative;
+            animation-name: multiColor;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Animation!</h1>
+    <div id="div1"></div> -->
+
+    <div id="div2"></div>
+    <button style="margin:20px; position: static;"  id="btnAnimate">Animate</button>
+    <script>
+        var dv = document.getElementById('div2');
+        var btn = document.getElementById('btnAnimate');
+
+        btn.onclick= function()
+        {
+            dv.className='divClass';
+        }
+    </script>
+</body>
+</html>

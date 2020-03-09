@@ -1,0 +1,65 @@
+package exceptionHandling;
+
+import java.util.Scanner;
+
+class TurkeyGate implements AutoCloseable{
+
+	@Override
+	public void close(){
+		System.out.println("In turkey Gate");	
+	}
+	
+}
+
+class TurkeyDoor implements AutoCloseable{
+
+	@Override
+	public void close() throws Exception{
+		System.out.println("In turkey Door");	
+	}
+	
+}
+
+class TurkeyWindow implements AutoCloseable
+{
+
+	@Override
+	public void close() throws IllegalStateException
+	{
+		System.out.println("In turkey window");
+	}
+	
+}
+public class Try {
+
+	public static void main(String[] args) {
+		
+//		try(TurkeyGate turkeyGate = new TurkeyGate())
+//		{
+//			System.out.println("main gate");
+////			throw new RuntimeException();
+//			throw new IllegalStateException();
+//
+//		}
+////		try(TurkeyDoor turkeyDoor = new TurkeyDoor())
+//		{
+//			System.out.println("main door");
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+//		try(TurkeyWindow turkeyWindow = new TurkeyWindow())
+//		{
+//			System.out.println("main window");
+//		}
+//		throw new IllegalStateException();
+		
+		
+		int age = 100;
+		if(!(age<18))
+		{
+			throw new AssertionError("Age is greater than 18", null);
+		}
+		//assert age<18 : "Age is greater than 18";
+		System.out.println(age);
+	}
+}

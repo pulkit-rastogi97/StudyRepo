@@ -1,0 +1,10 @@
+import java.util.function.Supplier;
+
+public class FunctionalInterfaceMain {
+	public static void main(String[] args) {
+		
+		Supplier supplier = () -> 4+5;
+		System.out.println(supplier.get());
+		
+	}
+}

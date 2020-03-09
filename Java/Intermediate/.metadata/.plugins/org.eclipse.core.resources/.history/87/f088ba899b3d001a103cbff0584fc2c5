@@ -1,0 +1,24 @@
+public class ClassOuter {
+
+	private int number;
+	protected String name;
+	static int add;
+
+	class InnerClass {
+
+		private String address;
+
+		public void method(int num, String nm) {
+			add = num;
+			number = num;
+			name = nm;
+			System.out.println("number = " + num + " name  = " + nm);
+		}
+	}
+
+	/*static public InnerClass createObject() {
+		InnerClass ref = new ClassOuter().new InnerClass();
+		// System.out.println("address = ");//+address);
+		return ref;
+	}*/
+}

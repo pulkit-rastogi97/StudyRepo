@@ -1,0 +1,5 @@
+package com.psl.prodApp.dto;
+
+public class Category {
+
+}

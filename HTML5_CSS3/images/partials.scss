@@ -1,0 +1,13 @@
+@import "_base";
+@import "_buttons";
+
+p{
+    color: red;
+    background-color: $bgColor;
+}
+
+.myBtn{
+    color: $primaryColor;
+    width: $btnwidth;
+    height: $btnHeight;
+}

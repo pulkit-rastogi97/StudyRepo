@@ -1,0 +1,100 @@
+package com.psl.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.psl.bean.Employee;
+import com.psl.util.DBUtil;
+
+public class EmployeeDao implements EmployeeDaoI{
+
+	Connection con;
+	
+	public EmployeeDao()
+	{
+		con = DBUtil.getConnect();
+	}
+	@Override
+	public ArrayList<Employee> getAllEmployees()
+	{
+		ArrayList<Employee> list = new ArrayList<Employee>();
+		String sql = "SELECT * FROM Employee";
+		try {
+		Statement stmt = 
+				con.prepareStatement(sql);
+		ResultSet rs = stmt.executeQuery(sql);
+		while(rs.next())
+		{
+			int id = rs.getInt(1);
+			String name = rs.getString(2);
+			int sal = rs.getInt(3);
+			Employee emp = new Employee(id,name,sal);
+			list.add(emp);
+		}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return list;
+	}
+	@Override
+	public Employee getEmployeeById(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Employee updateEmployee(int empId, int empSal) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Employee deleteEmployee(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public int insertEmployee(Employee emp) {
+		int id = 0;
+		String sql = "INSERT INTO Employee VALUES(default,?,?)";
+		try{
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, emp.getEmpName());
+			pstmt.setInt(2, emp.getEmpSal());
+			int row = pstmt.executeUpdate();
+			if(row > 0)
+			{
+				id = getCurrentId();
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return id;
+	}	
+		public int getCurrentId()
+		{
+			int id = 0;
+		/*	String sql = "SELECT 'Auto_Increment' FROM INFORMATION_SCHEMA.TABLES "+"WHERE TABLE_SCHEMA = 'mysql' AND TABLE_NAME = 'EMPLOYEE'";
+		 * */
+		 String sql = "SELECT LAST_INSERT_ID()";
+			try{
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				if(rs.next())
+				{
+					 id = rs.getInt(1);
+			   }
+		}catch(SQLException e)
+			{
+			System.out.println(e.getMessage());
+			}
+			return id;
+		}
+
+	}
+

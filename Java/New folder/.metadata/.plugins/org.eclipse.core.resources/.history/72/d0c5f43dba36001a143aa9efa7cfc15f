@@ -1,0 +1,61 @@
+package com.psl.dao;
+
+import java.sql.*;
+
+public class EmployeeJDBC {
+	private int empId;
+	private String name;
+	private float salary;
+	
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public float getSalary() {
+		return salary;
+	}
+
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+
+	{
+
+		public static boolean fetch()
+		{
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/test";
+			String userName = "root";
+			String password = "root";
+			Connection con = DriverManager.getConnection(url, userName,password);
+			
+			String sql = "SELECT * FROM Employee";
+			Statement stmt = con.createStatement();
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			
+			
+		} catch (SQLException | ClassNotFoundException e)
+
+		{
+			System.out.println(e.getMessage());
+		}
+		return true;		
+		}
+	}
+
+}

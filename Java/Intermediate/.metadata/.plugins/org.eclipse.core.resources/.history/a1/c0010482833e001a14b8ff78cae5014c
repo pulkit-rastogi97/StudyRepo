@@ -1,0 +1,10 @@
+package com.psl.game.test;
+
+public class TestGameDaoImpl {
+
+	@Before
+	public void init()
+	{
+		
+	}
+}

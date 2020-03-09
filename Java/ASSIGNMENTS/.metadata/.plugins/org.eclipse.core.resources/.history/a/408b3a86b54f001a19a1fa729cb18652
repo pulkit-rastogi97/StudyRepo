@@ -1,0 +1,23 @@
+package assignmen1;
+
+public class FeedingSchedule {
+	public static void main(String[] args) {
+		boolean keepGoing = true;
+		int count = 0;
+		int x = 3;
+		while (count++ < 3) {
+			System.out.println("count : "+count);
+			int y = (1 + 2 * count) % 3;
+			switch (y) {
+			default: System.out.println("for y default : "+y);
+			case 0:
+				System.out.println("for y in 0 : "+y);
+				x -= 1;
+				break;
+			case 1: System.out.println("for y in 1 : "+y);
+				x += 5;
+			}
+		}
+		System.out.println(x);
+	}
+}

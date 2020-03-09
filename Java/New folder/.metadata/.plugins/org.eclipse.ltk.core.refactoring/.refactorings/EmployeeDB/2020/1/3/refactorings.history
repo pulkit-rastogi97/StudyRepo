@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Inline local variable &apos;com.psl.pl.MainClass.main().sc&apos; in &apos;com.psl.pl.MainClass.main()&apos;&#x0D;&#x0A;- Original project: &apos;EmployeeDB&apos;&#x0D;&#x0A;- Original element: &apos;com.psl.pl.MainClass.main().sc&apos;" description="Inline local variable &apos;sc&apos;" id="org.eclipse.jdt.ui.inline.temp" input="/src&lt;com.psl.pl{MainClass.java" selection="334 27" stamp="1579167814712" version="1.0"/>
+</session>

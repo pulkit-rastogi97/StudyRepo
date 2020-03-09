@@ -1,0 +1,100 @@
+package com.psl.util;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+import com.psl.bean.ParkingBlock;
+import com.psl.exception.ParkingFullException;
+
+public class ParkingSystemImpl implements ParkingSystem {
+
+	@Override
+	public Set<ParkingBlock> populateData(String fileName) 
+	{
+		Set<ParkingBlock> sBlocks = new HashSet<ParkingBlock>();
+		ParkingBlock parkingBlock;
+		try 
+		{
+			if(fileName==null || fileName.isEmpty())
+			{
+				throw new FileNotFoundException();
+			}
+			else 
+			{
+				FileReader fileReader = new FileReader(fileName);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+				String string;
+				while((string=bufferedReader.readLine())!=null)
+				{
+					if(string==null || string.isEmpty())
+						continue;
+					else 
+					{
+						String[] strings = new String[3];
+						strings[0]="000";
+						strings[1]="2000";
+						strings[2]="0000";
+						
+						String[] tempArray = string.split(",");
+						if(tempArray.length==1)
+						{
+							strings[0]=tempArray[0];
+						}
+						else if(tempArray.length==2)
+						{
+							strings[0]=tempArray[0];
+							strings[1]=tempArray[1];
+						}
+						else if(tempArray.length==3)
+						{
+							strings[0]=tempArray[0];
+							strings[1]=tempArray[1];
+							strings[2]=tempArray[2];
+						}
+						parkingBlock = new ParkingBlock(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]), Integer.parseInt(strings[2]), 0000, 0.0);
+						sBlocks.add(parkingBlock);												
+					}
+				}
+				
+				bufferedReader.close();
+				if(sBlocks.isEmpty())
+				{
+					throw new IOException("File is empty");
+				}
+			}
+		} 
+		catch (IOException  e) 
+		{
+			System.out.println(e.getMessage());
+		}	
+		return sBlocks;
+	}
+
+	@Override
+	public ParkingBlock removeVehicle(Set<ParkingBlock> treeSet,
+			int vehicleNumber, int outitme) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<ParkingBlock> sortByParkingTime(Set<ParkingBlock> treeSet) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void parkVehicle(Set<ParkingBlock> set, int vehicleNumber,
+			int parkTime) throws ParkingFullException {
+		// TODO Auto-generated method stub
+		
+	}
+}

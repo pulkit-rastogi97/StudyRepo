@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="helloworld" class="com.psl.pojo.HelloWorld" init-method="init" destroy-method="destroy"></bean>
+
+<bean id="person" class="com.psl.pojo.Person">
+	<property name="name" value="Kiran"></property>
+	 <property name="homeAddress" ref="homeAddr"/>
+	<property name="officeAddress" ref="offAddr"/>
+</bean>
+
+	<bean id="HomeAddress" class="com.psl.pojo.Address">
+	<property name="city" value="pune"/>
+	<property name="pincode" value="411040"/>
+</bean>
+
+<alias alias="homeAddr" name="HomeAddress"/>
+
+<bean id="officeAddress" class="com.psl.pojo.Address">
+	<property name="city" value="Bangalore"/>
+	<property name="pincode" value="4000034"></property>
+</bean>
+
+<alias alias="offAddr" name="officeAddress"/>
+
+</beans>

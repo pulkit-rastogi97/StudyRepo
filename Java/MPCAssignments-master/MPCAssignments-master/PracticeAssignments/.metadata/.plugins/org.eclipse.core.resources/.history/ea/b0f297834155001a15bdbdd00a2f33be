@@ -1,0 +1,29 @@
+
+import java.util.Scanner;
+
+
+public class java {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	
+	int start= sc.nextInt();
+	int end = sc.nextInt();
+	if(end<start)
+		end=end+2400;
+	int rem1=0;
+	String str = start+"";
+	int len = str.length();
+	if(len>2)
+	{
+		rem1 = start %100;
+		start =  start/100;
+	}
+	
+	int rem2= end%100;
+	end= end/100;
+	
+	end-=start;
+	rem2-=rem1;
+	System.out.println(end+"   "+rem2);
+}
+}

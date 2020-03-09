@@ -1,0 +1,5 @@
+package com.psl.Question3.exception;
+
+public class StudentException {
+
+}

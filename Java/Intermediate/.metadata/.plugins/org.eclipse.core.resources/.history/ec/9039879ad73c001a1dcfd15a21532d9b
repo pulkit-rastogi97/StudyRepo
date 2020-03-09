@@ -1,0 +1,9 @@
+import java.util.function.Supplier;
+
+public class FunctionalInterfaceMain {
+	public static void main(String[] args) {
+		
+		Supplier supplier = () -> "Hello";
+		
+	}
+}

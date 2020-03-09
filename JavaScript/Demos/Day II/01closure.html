@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // // var hits = 0; // global var - not recommended
+        // function showHits() {
+        //     // var hits = 0; // everytime initialized to 0. so not useful
+        //     hits++;
+        //     return hits;
+        // }
+        
+        // alert(showHits());
+        // alert(showHits());
+
+        // hits+=5;
+        // alert(showHits());
+
+        // var foo = function() {
+        //     return 10;
+        // }
+        // alert(foo);
+
+        // var foo = (function() {
+        //     return 10;
+        // })();
+        // alert(foo);
+
+        // js closure - it is trying to retain the env of out function
+        // within inner function even though inner function is getting
+        // executed outside the outer function
+
+        var getHits = (function() {
+            var hits = 0;
+            function addHits() {
+                hits++;
+                return hits;
+            }
+            // addHits();
+            // addHits();
+            // console.log(addHits());
+
+            return addHits;
+        })();
+
+        // getHits();
+        
+        // alert(getHits);
+
+        alert(getHits());
+        alert(getHits());
+
+        // Benefits of Closure
+        // able to retain hits without using global variable
+
+        // addHits() is able to access and modify var hits when called
+        // from outside as it's in the same lexical scope of hits
+
+        // Closures can be created by
+        // returning a fun from another fun
+        // returning an obj from a fun
+        // passing a fun as a parameter to another fun
+
+    </script>
+</body>
+</html>

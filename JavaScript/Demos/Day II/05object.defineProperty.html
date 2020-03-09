@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(fName, lName) {
+        //     this.firstName = fName;
+        //     this.lastName = lName;
+        //     this.species = 'Human';
+        //     this.fullName = function()  {
+        //         return this.firstName + ' ' + this.lastName;
+        //     }
+        // };
+
+        // var man = new Person('Rahul','Dravid');
+        // console.log(man.fullName() + ' '+ man.species);
+
+        // man.species = 'Fish';
+        // console.log(man.fullName() + ' '+ man.species);
+
+        function Person(fName, lName) {
+            this.firstName = fName;
+            this.lastName = lName;
+            
+            this.fullName = function()  {
+                return this.firstName + ' ' + this.lastName;
+            }
+        };
+
+
+        var man = new Person('Rahul','Dravid');
+        console.log(man.fullName() + ' '+ man.species);
+
+        Object.defineProperty(man, 'species', {
+            value: 'Human Being',
+            writable: false,  // modifying
+            configurable: false, //deletion
+            enumerable: true // for in loop
+        });
+
+        console.log(man.fullName() + ' '+ man.species);
+
+        man.species = 'Fish';
+        console.log(man.fullName() + ' '+ man.species);
+
+        delete man.species;
+        console.log(man.fullName() + ' '+ man.species);
+
+        for(var prop in man) {
+            console.log(man[prop]);
+        }
+
+    </script>
+</body>
+</html>

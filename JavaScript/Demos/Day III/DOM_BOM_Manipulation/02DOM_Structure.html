@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myList"><li id="item1">JS</li><li>jQuery</li><li>Angular</li><li>Node.js</li></ul>
+
+    <button onclick="getFirstChild()">Get FirstChild</button>
+    <button onclick="getNextSibling()">Get NextSibling</button>
+    <button onclick="getLastChild()">Get LastChild</button>
+    <button onclick="getPreviousSibling()">Get PreviousSibling</button>
+    <button onclick="getChildNodes()">Get Child Nodes!</button>
+    <button onclick="getParentNode()">Get Parent Node!</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    
+        function getFirstChild() {
+            var list = $('myList').firstChild.innerHTML;
+            $('demo').innerHTML += '<br>'+list;
+        }
+    
+        function getNextSibling() {
+            var list = $('myList').firstChild;
+            $('demo').innerHTML += '<br>'+list.nextSibling.innerHTML;
+        }
+    
+        function getLastChild() {
+            var list = $('myList').lastChild.innerHTML;
+            $('demo').innerHTML += '<br>'+list;
+        }
+    
+        function getPreviousSibling() {
+            var list = $('myList').lastChild;
+            $('demo').innerHTML += '<br>'+list.previousSibling.innerHTML;
+        }
+
+        function getChildNodes() {
+            var list = $('myList').childNodes;
+
+            for(var i=0; i<list.length; i++){
+                $('demo').innerHTML += '<br>'+list[i].firstChild.nodeValue;
+            }
+        }
+
+        function getParentNode() {
+            var list = $('item1').parentNode;
+            $('demo').innerHTML += '<br>'+list.nodeName;
+        }
+
+    </script>
+</body>
+</html>

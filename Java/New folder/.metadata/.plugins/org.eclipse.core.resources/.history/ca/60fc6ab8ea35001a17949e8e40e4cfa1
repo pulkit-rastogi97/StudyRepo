@@ -1,0 +1,13 @@
+import java.util.Arrays;
+
+
+public class ArraysSortDemo {
+
+	public static void main(String[] args) {
+		String[] str = {"Pune", "Goa","Nagpur","Hyderabad"};
+		
+		Arrays.sort(str);
+		
+		System.out.println("after sorting : "+str);
+	}
+}

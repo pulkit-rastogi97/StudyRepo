@@ -1,0 +1,28 @@
+package com.psl.prodApp.test;
+
+import org.junit.After;
+import org.junit.Before;
+
+import com.psl.prodApp.dao.ProductDao;
+import com.psl.prodApp.dao.ProductDaoImpl;
+import com.psl.prodApp.service.ProductServiceImpl;
+
+public class TestProdApp {
+
+	ProductDao dao ;
+	ProductServiceImpl service;
+	
+	@Before
+	public void init()
+	{
+		dao = new ProductDaoImpl();
+		service = new ProductServiceImpl();
+		service.setDao(dao);
+	}
+	
+	@After
+	public void destroy()
+	{
+		
+	}
+}

@@ -1,0 +1,28 @@
+package com.psl.aop;
+
+public class BankImpl implements IBank {
+
+	int balance = 10000;
+	@Override
+	public void transfer(int creditActNo, int debitactNo, double amt) {
+		// TODO Auto-generated method stub
+		System.out.println("transfer initiated");
+
+	}
+
+	@Override
+	public double getBalance(int accNo) throws ArithmeticException {
+		
+		if(balance>0)
+			return 8000;
+		else 
+			throw new ArithmeticException();
+	}
+
+	@Override
+	public boolean validateCard(int cardNo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

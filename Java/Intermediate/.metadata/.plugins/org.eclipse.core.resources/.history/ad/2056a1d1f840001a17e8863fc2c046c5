@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class LisTest {
+public static void main(String[] args) {
+	
+	
+	ArrayList<String> l1 = new ArrayList<String>();
+	ArrayList<Integer>l2= new ArrayList<Integer>();
+	
+	System.out.println(l1.getClass()==l2.getClass());
+}
+}

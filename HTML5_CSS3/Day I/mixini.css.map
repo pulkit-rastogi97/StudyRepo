@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAOA,AAAA,IAAI,CAAA;EAHA,aAAa,EAIU,IAAI;EACvB,MAAM,EAAE,qBAAqB;EAC7B,UAAU,EAAE,MAAM;CAEzB;;AAIG,AAAA,EAAE,CAAA;EACE,KAAK,EAAE,MAAM;EACb,gBAAgB,EAAE,WAAW;CAChC",
+    "sources": [
+        "mixini.scss"
+    ],
+    "names": [],
+    "file": "mixini.css"
+}

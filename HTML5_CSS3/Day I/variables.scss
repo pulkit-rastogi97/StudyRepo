@@ -1,0 +1,12 @@
+$font-stack: verdana, sanas-serif;
+$primary-color: blue;
+$back-color: pink;
+
+body
+    {
+       font: $font-stack;
+       color: $primary-color; 
+       background-color: $back-color;
+       text-align: center;
+    }
+

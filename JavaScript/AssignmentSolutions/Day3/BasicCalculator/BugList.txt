@@ -1,0 +1,47 @@
+//Delete working at end
+
+//Bug is when we backspace before operator like if the expression
+was 12/6 and answer is 2. Then if we backspace 12 and make the expression
+as /6 then also the answer remains same. 
+
+//Inserting the element at any position and then
+  evaluates the expression and change the ('in')
+  ('out') fields as well as expression.
+
+//Delete should work anywhere in the expression.
+
+//Left right keys while using keyborad doesn't change the result
+
+//If we first use calcy keys then select and backspace to empty 
+    the input feild, then if you press C button then you gets 
+    to know "BackSpace" gets appended to the expression
+
+//Apply focus on ('in') field wherever necessary.
+
+//Backspace is only working at end of the expression to change
+    the result and expression.
+
+//Implement regex to input only 0-9 and . / + - *
+
+//Implement regex to match the expression, 
+    if it contains any operators, then only the 'out'
+    box should display the result.
+
+
+
+Least Priority bugs::
+    //Select and delete not working
+    //Select and backspace not working
+
+
+
+Resolved Bugs:: 
+    //Expression 3+4+ is not evaluating
+    //After getting results, you won't be able C key won't function
+    //Malfunctioning of clear button
+    //Keyboard operators not working
+    //Backspace not working properly - if we press it 
+    it gonna remove 2 characters from the ('in').value but the result in
+    the ('out') field is intact.
+    //Clear button and backspace not functioning together
+    //Enter key not working : it should display the result.

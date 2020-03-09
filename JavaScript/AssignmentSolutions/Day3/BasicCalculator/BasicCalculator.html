@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="./BasicCalculator.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id=body>
+        <div id="numbers">
+        <table style="width: inherit;">
+            <tr>
+                <td colspan="4"><p id="expr">  </p></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div id="q" >
+                        <div id="e" >
+                            <input id="in" type="text"> <br>
+                            <!-- <input id="out" trype="number" readonly disabled><br> -->
+                        </div>
+                        <div id="w">
+                            <input id="out" type="number" readonly disabled><br>
+                            <!-- <input id="in" type="text"> <br> -->
+                        </div>
+                    </div>
+                                       
+                </td>
+                <td><button value="11" id="clr">C</button></td>
+            </tr>
+            <tr>
+              <td><button value="1">1</button></td>
+              <td><button value="2">2</button></td>
+              <td><button value="3">3</button></td>
+              <td><button value="/">/</button></td>
+              <td></td>
+            </tr>
+            <tr>
+                <td><button value="4">4</button></td>
+                <td><button value="5">5</button></td>
+                <td><button value="6">6</button></td>
+                <td><button value="*">*</button></td>
+                
+            </tr>
+            <tr>
+                <td><button value="7">7</button></td>
+                <td><button value="8">8</button></td>
+                <td><button value="9">9</button></td>
+                <td><button value="-">-</button></td>
+                
+            </tr>
+            <tr>
+                <td><button value=".">.</button></td>
+                <td><button value="0">0</button></td>
+                <td><button value="=">=</button></td>
+                <td><button value="+">+</button></td>            
+            </tr>
+            <tr>
+                <td colspan="4">&copy;<a href="mailto:pulkit.rastogi97@gmail.com?subject=Thank%20you%20for%20basic%20calculator&body=Dear%20Pulkit%2C%0D%0A%0D%0AThank%20you%20so%20much%20for%20helping%20by%20building%20beautiful%20calculator%20for%20us.%0D%0A%0D%0ABest%20Regards%2C%0D%0Ayour_name">Pulkit Rastogi</a></td>
+            </tr>
+          </table>
+        </div>
+
+    </div>
+    <script>
+        window.onload=function()
+        {
+            $('in').focus();
+        }
+        var expression="";
+        function $(id)
+        {
+            return document.getElementById(id);
+        }
+
+        function clear()
+        {
+            expression[expression]
+        }
+
+        $('in').onfocus=function()
+        {
+            var that = this;
+            setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+        }
+        function getResult()
+        {
+            if(isNaN(expression[expression.length-1]))
+            {
+                expression=expression.substr(0, expression.length-1);
+                expression=""+eval(expression);
+                $('in').value=expression;
+                $('out').value=null;
+                return;
+            }
+            expression=""+eval(expression);
+            $('in').value=expression;
+            $('out').value=null;
+        }
+
+        $('in').onkeydown=function(event)
+        {
+            if(event.keyCode === 8)
+            {
+                if($('in').value!=null)
+                {
+                    expression=expression.substr(0,expression.length-1);
+                    // $('in').value=expression;
+                    if(isNaN(expression[expression.length-1]))
+                        {
+                            $('out').value=null;
+                            return;
+                        }
+                $('out').value=eval(expression);
+                }
+            }
+            else if(event.keyCode === 13)
+            {
+                getResult();
+                return;
+            }
+            // else if(event.keyCode === 37 || event.keyCode === 39)
+            // {
+            //     alert('trigerred');
+            // }
+            
+        }
+        $('in').onkeypress=function(event)
+        {
+           
+            if(isNaN(event.key))
+               {
+                   if(isNaN(expression[expression.length-1]))
+                    {
+                        var temp = expression;
+                        expression=temp.substr(0,temp.length-1)+event.key;
+                        $('out').value=eval(expression);
+                        return;
+                    }
+                    else
+                    {
+                        expression+=event.key;
+                        $('out').value=eval(expression);
+                        return;
+                    }
+               }
+                expression+=event.key;
+                $('out').value=eval(expression);
+        }
+        function clear()
+        {
+            if($('in').value!=null)
+            {
+                expression=expression.substr(0,expression.length-1);
+                $('in').value=expression;
+                if(isNaN(expression[expression.length-1]))
+                    {
+                        $('out').value=null;
+                        return;
+                    }
+                $('out').value=eval(expression);
+            }
+        }
+
+        $('out').onclick=function()
+        {
+            return;
+        }
+
+        $('numbers').onclick=function(event)
+        {
+            if(event.target.value==undefined || event.target.id == "out" || event.target.id=="in")
+            {
+                $('in').focus();
+                return;
+            }
+           else if(event.target.value==11)
+           {
+               clear();
+           }
+           else if(event.target.value== "=")
+           {
+               getResult();
+           }
+           else
+           {    
+               if(isNaN(event.target.value))
+               {
+                   if(isNaN(expression[expression.length-1]))
+                    {
+                        var temp = expression;
+                        expression=temp.substr(0,temp.length-1)+event.target.value;
+                        $('in').value=expression;
+                        $('out').value=eval(expression);
+                        return;
+                    }
+                    else
+                    {
+                        expression+=event.target.value;
+                        $('in').value=expression;
+                        $('out').value=eval(expression);
+                        return;
+                    }
+               }
+                expression+=event.target.value;
+                $('in').value=expression;
+                $('out').value=eval(expression);
+            }   
+        }
+
+    </script>
+</body>
+</html>

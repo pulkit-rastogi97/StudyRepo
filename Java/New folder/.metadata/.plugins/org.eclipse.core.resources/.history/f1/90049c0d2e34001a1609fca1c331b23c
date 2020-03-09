@@ -1,0 +1,12 @@
+package dateTimeAssignment;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
+public class QuesTwo {
+	public static void main(String[] args) {
+		DayOfWeek day = LocalDate.now().getDayOfWeek();
+		System.out.println(day);
+	}
+
+}

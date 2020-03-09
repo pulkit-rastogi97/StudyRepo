@@ -1,0 +1,7 @@
+
+@FunctionalInterface
+public interface Max {
+	int max(int num1, int num2);
+	//int min(int num3,int num4);
+
+}

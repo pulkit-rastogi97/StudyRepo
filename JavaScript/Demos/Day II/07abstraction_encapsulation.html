@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var Population = 0;
+        function Person() {
+            this.id = 100; // public property
+            var name = 'default_name'; // local variable  /private
+
+            // ctor level: spearate for each obj in memory
+            // this.hobbies = ['Music', 'Cricket'];
+
+            // private method
+            var privateFoo = function() {
+                console.log('Private method!');
+            }
+
+            // previldged function
+            this.getInfo = function() {
+                return this.id + ' ' + name;
+            }
+            Person.population++;
+        }
+
+        Person.prototype.hobbies = ['Music', 'Cricket'];
+        Person.prototype.getInfo = function() {
+            return this.id + ' '+name;
+        }
+
+        Person.population = 0;
+
+        var personObj1 = new Person();
+        var personObj2 = new Person();
+
+        console.log(personObj1.id);
+        console.log(personObj1.getInfo());
+
+        console.log(personObj1.hobbies);
+        console.log(personObj2.hobbies);
+
+        personObj1.hobbies.push('Computer Games');
+
+        console.log(personObj1.hobbies); //M, C, CG
+        console.log(personObj2.hobbies); //M, C
+        
+        console.log('Population ' + Person.population);
+        var PersonObj3 = new Person();
+        console.log('Population ' + Person.population);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+import java.util.function.Supplier;
+
+public class FunctionalInterfaceMain {
+	public static void main(String[] args) {
+		
+		Supplier supplier = () -> sayHello();   //sysout should not be used
+		System.out.println(supplier.get());
+		
+	}
+	public static String sayHello()
+	{
+		return "Hello";
+	}
+}

@@ -1,0 +1,20 @@
+import java.util.Hashtable;
+
+
+public class HashTable {
+
+	public static void main(String[] args) {
+		Hashtable<Integer,String> table = new Hashtable<Integer,String>();
+		table.put(101, "IT");
+		table.put(110, "Mechanical");
+		table.put(90, "civil");
+		table.put(80, "computer");
+		table.put(010, "biology");
+		table.put(60, "chemical");
+		table.put(845, "marketing");
+		table.put(110, "business");
+		table.put(6340, "Mechanical");
+		table.put(null,"hello");
+		System.out.println(table);
+	}
+}

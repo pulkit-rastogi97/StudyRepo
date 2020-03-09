@@ -1,0 +1,5 @@
+package com.psl.prodApp.dao;
+
+public interface ProductDao {
+
+}

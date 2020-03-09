@@ -1,0 +1,31 @@
+package com.psl.userDb.service;
+
+import com.psl.userDb.dao.UserDao;
+import com.psl.userDb.dao.UserDaoImpl;
+import com.psl.userDb.dto.UserDetails;
+
+public class UserServiceImpl implements UserService{
+
+	UserDao ref ;
+	public UserServiceImpl() {
+		ref = new UserDaoImpl();
+	}
+	@Override
+	public UserDetails addUser(UserDetails obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserDetails deleteUser(UserDetails obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserDetails updateUser(UserDetails obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

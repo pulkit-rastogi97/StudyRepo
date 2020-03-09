@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Inheritance    
+
+        // Prototype Chaining
+        // Classical Inheritance or constructor stealing
+        // Pseudo Classical Inheritance 
+        
+        // Prototype Chaining
+    //     function Parent(relation) {
+    //         this.relation = relation;
+    //         this.jobs = ['Service','Business'];
+    //         this.show = function() {
+    //             alert(this.relation);
+    //         }
+    //     }
+
+    //     var parent = new Parent('father');
+    //    // parent.show();
+
+    //     // parent.display=function()
+    //     // {
+    //     //     alert(this.relation+"  "+this.jobs);
+    //     // }
+    //     Parent.prototype.PPMethod = function() {
+    //         alert('Parent Prototype method!');
+    //     }
+
+    //     // parent.PPMethod();
+
+    //     Child.prototype = new Parent('Mother'); // inheritance
+    //     Child.prototype.constructor = Child; // ensure flow
+
+
+    //     function Child(rel) {
+
+    //     }
+
+    //     var child1 = new Child('son');
+    //     var child2 = new Child('daughter');
+
+    //     child1.show(); 
+    //     child2.show();
+
+    //     child1.PPMethod();
+
+
+        // console.log(child1.jobs);
+        // console.log(child2.jobs);
+
+        // child1.jobs.push('retired');
+        // console.log(child1.jobs);
+        // console.log(child2.jobs);
+
+        // Limitation
+        // 1. Arguments can't be passed to the super class data member 
+        // while creating sub class object
+        // 2. Inherited instance proeprties become prototype properties
+        // Note: Parent methods worked fine with child object
+        
+        // ========================================== //
+
+        // // call and apply
+
+        // var person1 = {fname:'Sachin', city: 'Mumbai'};
+        // var person2 = {fname:'Rahul', city: 'Bengaluru'};
+
+        // var sayHello = function() {
+        //     alert('Hello '+this.fname+ ' from '+this.city);
+        // }
+
+        // // sayHello(); // No obj passed, so this pointing nowhere
+        // // sayHello(person1);  //sayHello is not expecting any arg
+        // // person1.sayHello(); //sayHello is not a member function of person1
+
+        // // using call & apply
+        // // used to call any method, global method or member fun of any 
+        // // other class by passing your class's object
+
+        // sayHello.call(person1); // multiple parameters individually
+        // sayHello.apply(person2); // multiple parameters thru' array
+
+        // var updateInfo = function(name, city) {
+        //     this.fname = name;
+        //     this.city = city;
+        // }
+
+        // updateInfo.call(person1, 'Mahi', 'Ranchi'); 
+        // updateInfo.apply(person2, ['Yuvi', 'Chandigarh']); 
+
+        // sayHello.call(person1); 
+        // sayHello.apply(person2);
+
+        // -------------------------- //
+
+        // 2. Classical inheritance / constructor stealing
+
+        // function Parent(relation) {
+        //     this.relation = relation;
+        //     this.jobs = ['Service', 'Business'];
+        //     this.show = function() {
+        //         alert(this.relation);
+        //     }
+        // }
+
+        // Parent.prototype.ppMethod = function() {
+        //     alert('Parent Prototype Method!');
+        // }
+
+
+
+        // function Child(rel) {
+        //     Parent.call(this, rel); // able to pass arg to parent
+        // }
+
+        // var child1 = new Child('son');
+        // var child2 = new Child('daughter');
+
+        // child1.show();
+        // child2.show();
+
+        // child1.ppMethod();
+
+        // console.log(child1.jobs);
+        // console.log(child2.jobs);
+
+        // child1.jobs.push('retired');
+
+        // console.log(child1.jobs); //s, b, r
+        // console.log(child2.jobs); //s, b
+
+        // Limitation
+        // 1. No function reuse - in memory
+        // 2. Child can't access methods defined on parent' 
+        // prototype level
+
+        // Note: properties are working fine
+    </script>
+</body>
+</html>

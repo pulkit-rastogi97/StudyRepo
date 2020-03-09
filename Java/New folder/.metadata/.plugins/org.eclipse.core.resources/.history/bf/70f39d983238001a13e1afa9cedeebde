@@ -1,0 +1,15 @@
+package com.psl.dao;
+
+import java.util.ArrayList;
+
+import com.psl.bean.Employee;
+
+public interface EmployeeDaoI {
+	
+	public ArrayList<Employee> getAllEmployees();
+	public Employee getEmployeeById(int empId);
+	public Employee updateEmployee(int empId,int empSal);
+	public Employee deleteEmployee(int empId);
+	public int insertEmployee(Employee emp);
+
+}

@@ -1,0 +1,22 @@
+@var: red;
+
+div{
+    height: 50px;
+    width: 50px;
+    background-color: @var;
+    margin: 10px;
+
+    &:hover{
+        background-color: fadeout(@var,50%);
+    }
+
+}
+
+@primaryColor: orange;
+@width : 0.4;
+
+h1{
+    width: percentage(@width);
+    color: saturate(@primaryColor,5%);
+    background-color: green;
+}

@@ -1,0 +1,50 @@
+package Exception;
+
+public class Account {
+
+	double balance;
+	String name;
+	public Account(String name,double balance)
+	{
+		this.balance=balance;
+		this.name=name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	@Override
+	public String toString()
+	{
+		return "name ="+name+" balance = "+balance;
+	}
+	public double getBalance(String name)
+	{
+		double bal = 0.0;
+		try{
+			if("Pooja".equals(name))
+			{
+				bal=this.balance;
+			}
+			else
+				throw new AccountException("not a valid user ");
+		}catch(AccountException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return bal;
+	}
+	public void withdraw(double amt)
+	{
+		try{
+			if(amt>balance)
+				throw new AccountException("Insufficient balance");
+			else
+			     balance = balance - amt;
+		}catch(AccountException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}
