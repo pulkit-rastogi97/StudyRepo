@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-3.1.xsd -->
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns="http://www.springframework.org/schema/beans">
+
+	<!-- Initialization for data source -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property value="com.mysql.jdbc.Driver" name="driverClassName"/>
+		<property value="jdbc:mysql://localhost:3306/test" name="url"/>
+		<property value="root" name="username"/>
+		<property value="root" name="password"/>
+	</bean>
+	
+	
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean id="studentJDBCTemplate"
+		class="com.psl.tx.dao.StudentJDBCTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="transactionManager" ref="transactionManager"></property>	
+	</bean>
+
+
+</beans>

@@ -1,0 +1,5 @@
+//Proxy pattern // ProxyFactory
+//For getting copy of the aspect class objects
+	//DirtyRead Problems
+	//Non-Repeatable Read
+	//Fantom Read
