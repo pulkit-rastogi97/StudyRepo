@@ -1,0 +1,5 @@
+package com.spl.emp.bean;
+
+public class Employee {
+
+}

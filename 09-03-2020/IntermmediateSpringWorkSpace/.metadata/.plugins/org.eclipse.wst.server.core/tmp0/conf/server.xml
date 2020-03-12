@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="H:\Users\pulkit_rastogi\Downloads\StudyRepo\StudyRepo\09-03-2020\IntermmediateSpringWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="H:\Users\pulkit_rastogi\Downloads\StudyRepo\StudyRepo\09-03-2020\IntermmediateSpringWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SpringMVCExample1" path="/SpringMVCExample1" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVCExample1"/></Host>
+      <Context docBase="H:\Users\pulkit_rastogi\Downloads\StudyRepo\StudyRepo\09-03-2020\IntermmediateSpringWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="H:\Users\pulkit_rastogi\Downloads\StudyRepo\StudyRepo\09-03-2020\IntermmediateSpringWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SpringMVCEmployeeJDBCDaoSupport" path="/SpringMVCEmployee" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVCEmployeeJDBCDaoSupport"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -1,0 +1,113 @@
+package com.psl.emp.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+import com.psl.emp.bean.Employee;
+import com.psl.emp.bean.EmployeeRowMapper;
+
+public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao{
+
+	static HashMap<Integer, Employee> empMap = new HashMap<Integer, Employee>();
+	
+	static
+	{
+//		Employee emp1 = new Employee(110,"Nisha",30000);
+//		Employee emp2 = new Employee(111,"Rohan",40000);
+//		Employee emp3 = new Employee(112,"Ganesh",50000);
+//		Employee emp4 = new Employee(113,"Anant",60000);
+//		Employee emp5 = new Employee(114,"Pulkit",70000);
+//		
+//		empMap.put(emp1.getEmpId(), emp1);
+//		empMap.put(emp2.getEmpId(), emp2);
+//		empMap.put(emp3.getEmpId(), emp3);
+//		empMap.put(emp4.getEmpId(), emp4);
+//		empMap.put(emp5.getEmpId(), emp5);
+	}
+	
+	@Override
+	public Employee getEmployeeById(int empId) {
+		
+		String sql = "Select * from employee where empId = "+empId;
+		
+		return (Employee) this.getJdbcTemplate().query(sql, new EmployeeRowMapper());
+	}
+
+	@Override
+	public HashMap<Integer, Employee> getallEmployees() {
+		String sql = "Select * from employee";
+		
+		List<Employee> empList = this.getJdbcTemplate().query(sql, new EmployeeRowMapper());
+		
+		for(Employee emp : empList)
+		{
+			empMap.put(emp.getEmpId(), emp);
+		}
+		return empMap;
+	}
+
+	@Override
+	public Employee addEmployee(final Employee emp) {
+		String sql = "INSERT INTO Employee VALUES(?,?,?)";
+		if(this.getJdbcTemplate().execute(sql, new PreparedStatementCallback<Employee>() {
+
+			@Override
+			public Employee doInPreparedStatement(PreparedStatement pstmt) throws SQLException, DataAccessException {
+				pstmt.setInt(1, emp.getEmpId());
+				pstmt.setString(2, emp.getEmpName());
+				pstmt.setInt(3, emp.getEmpSal());
+				
+				int row = pstmt.executeUpdate();
+				if(row==1)
+					return emp;
+				else
+					return null;
+			}
+		}) == null)
+			{
+				try {
+					throw new SQLException("Not Inserted ");
+				} catch (SQLException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+			return emp;
+			
+				
+			
+	}
+
+	@Override
+	public Employee removeEmployee(int empId) {
+		
+		final Employee emp = getEmployeeById(empId);
+		String sql = "Delete from Employee where empId = "+empId;
+		if(this.getJdbcTemplate().execute(sql, new PreparedStatementCallback<Employee>() {
+
+			@Override
+			public Employee doInPreparedStatement(PreparedStatement pstmt) throws SQLException, DataAccessException {
+				
+				int row = pstmt.executeUpdate();
+				if(row==1)
+					return emp;
+				else
+					return null;
+			}
+		}) == null)
+			{
+				try {
+					throw new SQLException("Not Deleted ");
+				} catch (SQLException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+			return emp;
+	}
+
+}
