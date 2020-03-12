@@ -1,6 +1,0 @@
-package com.psl.controller;
-
-@Controller
-public class MyController {
-
-}
