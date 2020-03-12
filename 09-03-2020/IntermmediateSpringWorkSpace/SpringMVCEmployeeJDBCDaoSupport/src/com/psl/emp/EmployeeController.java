@@ -1,4 +1,4 @@
-package com.psl.emp.controller;
+package com.psl.emp;
 
 import java.util.HashMap;
 
@@ -22,7 +22,6 @@ public class EmployeeController {
 	@RequestMapping("addEmployee")
 	public ModelAndView toAddEmployee()
 	{
-		System.out.println("hiiii");
 		return new ModelAndView("addEmp","","");
 	}
 	

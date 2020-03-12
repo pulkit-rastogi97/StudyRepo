@@ -3,10 +3,12 @@ package com.psl.emp.service;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.psl.emp.bean.Employee;
 import com.psl.emp.dao.EmployeeDao;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeeService{
 
 	@Autowired
