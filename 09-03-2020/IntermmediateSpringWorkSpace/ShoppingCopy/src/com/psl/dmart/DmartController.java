@@ -76,7 +76,6 @@ public class DmartController {
 	@RequestMapping("addToCart")
 	public String addToCart(@RequestParam("id") String id, Model model)
 	{
-		System.out.println(id+" id is this");
 		productService.addToCart(Integer.parseInt(id));
 		model.addAttribute("products",products);
 		model.addAttribute("viewCart",productService.displayCartItems());
@@ -86,7 +85,6 @@ public class DmartController {
 	@RequestMapping("removeFromCart")
 	public String removeFromCart(@RequestParam("id") String id, Model model)
 	{
-		System.out.println(id+" this is id");
 		productService.removeFromCart(Integer.parseInt(id));
 		model.addAttribute("products",products);
 		model.addAttribute("viewCart",productService.displayCartItems());
