@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Mar 16 18:37:10 IST 2020
+org.eclipse.jst.jee.server\:/binary\:H\:\\Users\\pulkit_rastogi\\Downloads\\StudyRepo\\Intermmediate\ Web\ Services\ Using\ REST\ API\\Web\ Services\ Workspace\\RestHelloWorldExample\\WebContent\\WEB-INF\\lib\\spring-web-4.3.1.RELEASE.jar=WEB-INF/lib/spring-web-4.3.1.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:H\:\\Users\\pulkit_rastogi\\Downloads\\StudyRepo\\Intermmediate\ Web\ Services\ Using\ REST\ API\\Web\ Services\ Workspace\\SpringRestExampleXML\\WebContent\\WEB-INF\\lib\\spring-web-4.3.1.RELEASE.jar=WEB-INF/lib/spring-web-4.3.1.RELEASE.jar

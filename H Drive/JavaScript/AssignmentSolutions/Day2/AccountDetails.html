@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccountDetails</title>
+</head>
+<body>
+    <script>
+
+    var bank= [
+    {
+    name: 'JOHN',
+    account: 'Saving',
+    AccountStatus: 'blocked'
+    },
+    {
+    name: 'KATE ',
+    account: 'Current',
+    AccountStatus: 'active'
+    },
+    {
+    name: 'MIKE',
+    account: 'Saving',
+    AccountStatus: 'active'
+    }]; 
+
+    var Name = prompt("Enter Account Holder's name : ");
+    var flag = true;
+    for(var name of bank)
+    {
+        if(name.name==Name)
+        {
+            if(name.AccountStatus=='blocked')
+            {
+                document.write("You need to activate your account ");
+            }
+            else
+            {
+                document.write("Account is active");
+            }
+            flag=false;
+            break;
+        }
+    }
+    if(flag)
+    {
+        document.write("Record not found");
+    }
+
+    </script>
+</body>
+</html>

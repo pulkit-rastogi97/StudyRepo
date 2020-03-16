@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name : <input type="text" id="txtInput">
+    <br>
+    Hello <span id= "spanName"></span>
+    <br>
+    <br>
+    All keys <span id= "allkeys"></span>
+
+    <script>
+
+        function $(id)
+        {
+            return document.getElementById(id);
+        }
+
+        $('txtInput').addEventListener('focusout',function(e)
+        {
+          $('spanName').innerHTML=$('txtInput').value;
+        });
+
+        $('txtInput').addEventListener('keydown',function(e)
+        {
+            $('allkeys').innerHTML+=e.key+" <br>";
+        });
+    </script>
+</body>
+</html>
+
+
+

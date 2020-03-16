@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Parent Class : Properties defined at Constructor level
+        function Human(name) {
+            this.name = name;
+        }
+
+        //Parent Class : Methods defined at prototype level for memory sharing
+        Human.prototype.speak = function() {
+            alert('I speak English!');
+        }
+        Human.prototype.intro = function() {
+            alert('Hi, I am '+this.name);
+        }
+
+        // Prototype chaining
+        Student.prototype = new Human();
+        Student.prototype.constructor = Student;
+
+
+        function Student(nm, school, courses) {
+
+            Human.call(this, nm); //classical inheritance
+
+            this.school = school;
+            this.courses = courses;
+        }
+
+        // overriding base class method
+        Student.prototype.intro = function() {
+            alert('Hi, I am '+this.name+', I am a student of '+this.school+
+            ', I study '+this.courses);
+        }
+
+        Student.prototype.takeExams = function() {
+            alert('This is exam time!');
+        }
+
+        var person = new Human('Sunil');
+        person.speak();
+        person.intro();
+
+        var student = new Student('Vineet', 'IIT', ['JS', 'Angular']);
+        student.speak();
+        student.intro();
+        student.takeExams();
+
+        letMeIntro(person);
+        letMeIntro(student);
+
+        function letMeIntro(obj) {
+            obj.intro(); //polymorphism
+        }
+
+    </script>
+</body>
+</html>

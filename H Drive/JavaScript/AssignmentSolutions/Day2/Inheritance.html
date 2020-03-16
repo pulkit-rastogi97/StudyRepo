@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <script>
+        function Person(name,location)
+        {
+            this.name=name;
+            this.location=location;
+        }
+
+        Person.prototype.eat=function()
+        {
+            alert("I like sea food");
+        }
+
+        Person.prototype.introduction=function()
+        {
+            alert("My Name is "+this.name+" and I am from "+this.location);
+        }
+
+        function developer()
+        {
+            this.projects=["SmartCar,Autonomous Car"];
+        }
+
+        developer.prototype = new Person();
+        developer.c
+
+        developer.prototype.takeleave = function()
+        {
+            alert("I am on leave next week");
+        }
+
+        developer.prototype.introduction=function()
+        {
+            alert("My Name is "+this.name+" and I am from "+this.location+ " and I am allocated in "+this.projects);
+        }
+
+        var obj = new developer();
+
+        obj.eat();
+        alert(obj.name+" "+obj.location);
+        obj.introduction();
+    </script>
+</body>
+</html>

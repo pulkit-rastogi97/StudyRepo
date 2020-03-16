@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TemperatureConverter</title>
+    <link rel="stylesheet" href="./TemperatureConverter.css">
+    <script src="./TemperatureConverter.js"></script>
+</head>
+<body>
+    <br>
+        <p id="input"></p>
+        <p id="output"></p>
+   <br>
+    <script>
+        var s = input().split(' ');
+        if(s[0]=="1")
+        {
+            document.getElementById("input").innerHTML = "Temperature in celsius = "+s[1]+" degree";
+            document.getElementById("output").innerHTML = "Temperature in fahrenheit = "+s[2]+" degree";
+        }
+        else{
+            document.getElementById("input").innerHTML = "Temperature in fahrenheit = "+s[1]+" degree";
+            document.getElementById("output").innerHTML = "Temperature in celsius ="+s[2]+" degree";
+        }
+    </script>
+   
+</body> 
+</html>

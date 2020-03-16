@@ -1,0 +1,6 @@
+package com.psl.dao;
+
+public interface LoginDao {
+
+	public Boolean validateUser(User user);
+}

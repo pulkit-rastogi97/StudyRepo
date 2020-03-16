@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Similar to packages in Java and Namespace in dotnet.
+        
+        function Employee(id, name, salary) {
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+
+        var empModule = (function() {
+            var empList = []; // private data, collection
+            return {
+                add: function(e) {
+                    empList.push(e);
+                },
+                show: function() {
+                    for(var index in empList) {
+                        console.log(empList[index]);
+                    }
+                } 
+            }
+        })(); // IFEE
+
+        var emp1 = new Employee(100,'Sachin',5000.00);
+        var emp2 = new Employee(200,'Saurav',6000.00);
+        var emp3 = new Employee(300,'Rahul',7000.00);
+
+        empModule.add(emp1);
+        empModule.add(emp2);
+        empModule.show();
+        empModule.add(emp3);
+        empModule.show();
+
+        
+    </script>
+</body>
+</html>

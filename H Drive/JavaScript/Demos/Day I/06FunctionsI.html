@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // variable argument function
+        
+        // function getArgs() {
+        //     document.write('<br> G1');
+        //     for(var i in arguments) {
+        //         document.write('<br>'+ arguments[i]);
+        //     }
+        //     document.write("<br>");
+        // }
+        
+        // function getArgs(x, y, z) {
+        //     document.write('<br> R1');
+        // }
+
+        // getArgs();
+        // getArgs(11, 22);
+        // getArgs(11, 22, 33);
+        // getArgs(11, "22", 33.56);
+        // getArgs(11, "22", 33.56, true, 55);
+        
+        var g = 9; // global var
+        function foo() {
+            var l = 5; // local
+
+            y=7; // assumption it is declared globally
+            // var t; // t declaration is hoisted at the begining of the fun
+
+            alert(g+y); //16
+
+            alert(t); // undef
+            {
+                var t = 4; // in JS local var have fun level scope & not block level
+                // JS hoisting
+                alert(t); //4
+                t++;
+            }
+            alert(t); //5, undefined
+
+
+            // {
+            //     (function() {
+            //         var a;
+            //         alert('Doing initialization! - once and off');
+            //     })();                
+            // }
+
+        }
+        foo();
+        alert(g+y); //
+        
+
+        // Function defintions :2 ways
+        
+        // Function declaration syntax
+
+        // sayHello('Saurav', 45); // fun declaratin is hoisted at the begining
+        // sayHello('Saurav'); 
+
+        function sayHello(name, age) {
+            alert(name.toUpperCase() + ' age ' + age);
+        }
+
+        sayHello('Rahul', 44);
+
+        // Function Expression syntax
+
+        // var a = 10;
+
+        // display('Marsh'); // no hoisting
+
+        
+        var display = function(name) {
+            alert('Welcome to Persistent '+ name);
+            return name;
+        }
+
+        display('Marsh'); 
+
+        var nm = display('Virat');
+        alert(nm);
+
+    </script>
+</body>
+</html>

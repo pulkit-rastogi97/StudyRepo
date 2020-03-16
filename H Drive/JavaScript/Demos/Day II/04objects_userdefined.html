@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // User defined Objects
+        // 1. create direct instance OR empty object
+        // 2. Object Literal
+        // 3. using template (class) also known as object constructor
+
+
+        // 1. create direct instance OR empty object
+        // var personObj1 = {};
+        // var personObj2 = new Object();
+
+        // personObj1.id = 123;
+        // personObj1.name = 'Sachin';
+        // personObj1.getData = function() {
+        //     return this.id + ' ' + this.name;
+        // }
+
+        // console.log(personObj1.id + '  ' + personObj1.name); //public prop
+        // console.log(personObj1.getData());
+
+        // console.log(personObj2.getData()); // error: not available for personObj2
+
+        // // 2. Object Literal
+        //     var personObj = {
+        //         id: 1,
+        //         name: 'Rahul',
+        //         getInfo: function() {
+        //             return this.id + ' ' + this.name;
+        //         }
+        //     }
+        //     var personObjII = {
+        //         id: 2,
+        //         name: 'Saurav',
+        //         getData: function() {
+        //             return this.id + ' ' + this.name;
+        //         }
+        //     }
+
+        //     console.log(personObj.getInfo());
+        //     console.log(personObjII.getData());
+
+
+        // 3. using template (class) also known as object constructor
+        
+        // class/ ctor/    // using function/ object constructor
+        function Employee(fName, lName, city) {
+            this.firstName = fName;
+            this.lastName = lName;
+            this.city = city;
+
+            // constructor level method
+            this.ctorMethod = function() {
+                alert('CTOR Method '+ this.firstName);
+            }
+        }
+        
+        var emp1 = new Employee('Sunil', 'Bansal', 'Pune');
+        var emp2 = new Employee('Sachin', 'Tendulkar', 'Mumbai');
+
+        console.log('FirstName ' + emp1.firstName +
+        ' LastName '+emp1.lastName + ' City '+ emp1.city);
+        console.log('FirstName ' + emp2.firstName +
+        ' LastName '+emp2.lastName + ' City '+ emp2.city);
+
+        emp1.ctorMethod();
+        emp2.ctorMethod();
+
+        emp1.ctorMethod = function() {
+            alert('CTOR Method of emp1');
+        }
+
+        emp1.ctorMethod();
+        emp2.ctorMethod();
+
+
+        emp1.getFullInfo = function() {
+            alert('Object Level Method ' + this.firstName + ' ' + this.lastName + ' ' + this.city);
+        }
+
+        emp1.getFullInfo();
+
+        // not available for emp2
+    </script>
+</body>
+</html>

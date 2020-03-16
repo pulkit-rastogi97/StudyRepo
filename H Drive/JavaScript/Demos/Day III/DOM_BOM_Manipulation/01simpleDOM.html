@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">This is simple para!</p>
+
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
+    
+        document.write('No of ChildNodes ' + $('p1').childNodes.length);
+        document.write('<br>ChildNodes ' + $('p1').firstChild.nodeValue);
+        document.write('<br>NodeName ' + $('p1').nodeName);
+        document.write('<br>NodeType ' + $('p1').nodeType);
+
+    </script>
+</body>
+</html>

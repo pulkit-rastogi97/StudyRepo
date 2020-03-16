@@ -1,0 +1,53 @@
+package com.psl.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.psl.bean.User;
+import com.psl.service.LoginService;
+
+
+@Controller
+public class LoginController {
+
+	@Autowired
+	LoginService service;
+	
+	@RequestMapping("index")
+	public String goToLogin(Model model)
+	{
+		System.out.println("hiii");
+		User user= new User();
+		model.addAttribute("loginUser",user);
+		return "loginPage";
+	}
+	
+	@RequestMapping("loginPage")
+	public String loginUser(@ModelAttribute("loginUser") User user, BindingResult result, Model model)
+	{
+		if(result.hasErrors())
+		{
+			System.out.println("print");
+			return "loginPage";
+		}
+		else
+		{
+			Boolean isValidated = service.validateUser(user);
+			if(isValidated)
+			{
+				System.out.println("valid");
+				return "loginPage";
+			}
+			else
+			{
+				System.out.println("invalid");
+				return "loginPage";
+			}
+		}
+	}
+	
+}

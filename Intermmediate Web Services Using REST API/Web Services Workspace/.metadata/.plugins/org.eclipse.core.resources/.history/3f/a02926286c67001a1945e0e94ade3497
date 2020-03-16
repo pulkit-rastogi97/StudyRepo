@@ -1,0 +1,47 @@
+package com.psl.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.psl.bean.Product;
+
+@Repository("dao")
+public class ProductDaoImpl implements ProductDao{
+
+	static HashMap<String, Product> products = new HashMap<String, Product>();
+	static
+	{
+		products.put("101", new Product("101","Soap1","120"));
+		products.put("102", new Product("102","Soap2","120"));
+		products.put("103", new Product("103","Soap3","120"));
+		products.put("104", new Product("104","Soap4","120"));
+		products.put("105", new Product("105","Soap5","120"));
+		products.put("106", new Product("106","Soap6","120"));
+	}
+	@Override
+	public Product getProductById(String productId)
+	{
+		return products.get(productId);
+	}
+	@Override
+	public HashMap<String, Product> getAllProducts()
+	{
+		return products;
+	}
+	
+	@Override
+	public Product deleteProductById(String productId) {
+		
+		return products.remove(productId);
+	}
+	@Override
+	public Boolean updatePrice(String productId, String productPrice) {
+		
+		products.replace(key, oldValue, newValue)
+		products.put(productId, products.get(productId).setProductPrice(productPrice));
+		
+		return null;
+	}
+}

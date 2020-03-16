@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Employee(r) {
+            this.role = r;
+
+            // this.display = function() {
+            //     alert('CTOR Level ' + this.role);
+            // }
+        }
+        
+        Employee.prototype.display = function() {
+            alert('Prototype Level ' + this.role);
+        }
+
+        var emp1 = new Employee('Developer');
+        var emp2 = new Employee('Tester');
+        var emp3 = new Employee('Manager');
+
+        emp2.display = function() {
+            alert('Object level '+this.role);
+        }
+
+        emp1.display(); // P,    C
+        emp2.display(); // O,   p
+        emp3.display(); // P   C
+
+
+        // priority given to
+        // Object level
+        // ctor level
+        // prototype level
+
+        // this always refers to the original object
+    </script>
+</body>
+</html>

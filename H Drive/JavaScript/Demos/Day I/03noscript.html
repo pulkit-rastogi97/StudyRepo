@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // alert("head!");
+        // var p1 = document.getElementById('p1');
+        // p1.innerHTML = "Modified text";
+        function foo() {
+            var p1 = document.getElementById('p1');
+            p1.innerHTML = "Modified text";
+            // alert('foo');
+            // return 10;
+        }
+        // foo();
+
+        function bar() {
+            if(this.readyState == "complete") {
+                alert("document readystate: "+this.readyState);
+                var p1 = document.getElementById('p1');
+                p1.innerHTML = "New text";
+            }
+        }
+
+
+        // window.onload = foo;
+        // window.onload = foo();
+        // alert(foo);
+        // alert(foo());
+
+        document.onreadystatechange = bar;
+
+    // ready states
+        // uninitialized - has not started loading yet
+        // loading - is loading
+        // loaded - is loaded
+        // interactive - has loaded enough so that user can interact
+        // complete - fully loaded
+        
+
+    </script>
+    <!-- Providing jQuery from CDN or from your own server -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+         
+<body>
+    <!-- 
+        HTML - Structure and Contents
+        CSS - Styles and Layout
+        Javascript - Interactivity and Behaviour
+     -->
+     <script>
+        //  alert("body begining!");
+
+        // DOM Manipulation using id
+        //  var p1 = document.getElementById('p1');
+        //  p1.innerHTML = "Modified text";
+        // foo();
+     </script>
+     <p id="p1">This is a simple para!</p>
+     <script>
+        //  alert("body end!");
+        
+        // foo();        
+     </script>
+     <noscript>
+         <h1>Please Turn on Javascript!</h1>
+     </noscript>
+</body>
+</html>

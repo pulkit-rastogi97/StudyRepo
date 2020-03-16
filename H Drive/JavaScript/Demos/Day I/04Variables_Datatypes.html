@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 5; // number
+        var b = 6.7; // number
+        var ch = 'A'; // string
+        var ch2 = "B"; // string
+        var str = "ab'cd"; // string
+        var str2 = 'ab"cde'; // string
+        var bool = true; // boolean
+        var x; // undefined
+
+        // array  (array literal syntax)
+        var cars = ['Audi','BMW','Nano'];
+
+        var arr1 = new Array(11,22); // length - 2
+        var arr2 = new Array(5); // length - 5
+
+        // Object (object literal syntax)
+        var obj = {firstName:'Sachin', lastName:'Tendulkar'};
+
+        document.write('<br> type of a '+ typeof(a));
+        a = "Sunil";
+        document.write('<br> type of a '+ typeof a);
+        document.write('<br> type of x '+ typeof(x));
+        x = 11 + "abcd";
+        document.write('<br> type of x '+ typeof(x));
+        document.write('<br> Value of x '+ x);
+        x = 5 + 6 + "abcd";
+        document.write('<br> type of x '+ typeof(x));
+        document.write('<br> Value of x '+ x); //11abcd
+        x = "abcd" + 5 + 6;
+        document.write('<br> type of x '+ typeof(x));
+        document.write('<br> Value of x '+ x); //abcd56  abcd11 
+
+        var $ = 5;
+
+        var z = 11;
+        // if(z == '11') {
+        if(z === '11') {
+            alert('equal');
+        }
+        else {
+            alert('not equal');
+        }
+        // equal, not equal
+
+        for(var i =0; i<cars.length; i++) {
+            console.log(cars[i]);
+        }
+
+        // for in loop
+        for(var i in cars) {
+            console.log(cars[i]);
+        }
+
+        // for of loop
+        for(var car of cars) {
+            console.log(car);
+        }
+    </script>
+</body>
+</html>

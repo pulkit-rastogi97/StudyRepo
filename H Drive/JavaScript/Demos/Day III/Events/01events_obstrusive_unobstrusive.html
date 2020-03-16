@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        HTML
+        CSS
+        JS
+     -->
+
+     <div id="div1"></div>
+
+     <!-- Obstrusive JS: JS within HTML itself: not recommended -->
+     <!-- <button onclick="getElementById('div1').innerHTML = Date()">Date & Time</button> -->
+
+     <!-- still Obstrusive JS -->
+     <!-- <button onclick="getDateTime()"></button> -->
+     
+     <button id="btn1">Date & Time</button>
+
+     <script>
+        //  function getDateTime() {
+        //      document.getElementById('div1').innerHTML = Date();
+        //  }
+         function getDateTime() {
+             $('div1').innerHTML = Date();
+         }
+
+         function $(id) {
+             return document.getElementById(id);
+         }
+     
+        //  UnObstrusive JS
+        //  var btn1 = document.getElementById('btn1');
+        //  btn1.onclick = getDateTime();
+
+         var btn1 = $('btn1');
+         btn1.onclick = getDateTime;
+
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        alert("head!");
+        // var p1 = document.getElementById('p1');
+        // p1.innerHTML = "Modified text";
+    </script>
+    <!-- Providing jQuery from CDN or from your own server -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+         
+<body>
+    <!-- 
+        HTML - Structure and Contents
+        CSS - Styles and Layout
+        Javascript - Interactivity and Behaviour
+     -->
+     <script>
+         alert("body begining!");
+
+        // DOM Manipulation using id
+        //  var p1 = document.getElementById('p1');
+        //  p1.innerHTML = "Modified text";
+
+     </script>
+     <p id="p1">This is a simple para!</p>
+     <script>
+         alert("body end!");
+         var p1 = document.getElementById('p1');
+        //  p1.innerHTML = "Modified text";
+         p1.innerText = "New Text";
+     </script>
+     
+</body>
+</html>
