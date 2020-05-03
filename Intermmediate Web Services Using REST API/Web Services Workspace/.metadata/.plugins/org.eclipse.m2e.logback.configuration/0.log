@@ -1,0 +1,2 @@
+2020-04-24 16:42:53,137 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-04-24 16:43:06,197 [ForkJoinPool.commonPool-worker-3] WARN  org.eclipse.jgit.util.FS - locking FileBasedConfig[C:\Users\PULKIT\.config\jgit\config] failed after 5 retries
